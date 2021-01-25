@@ -1,0 +1,86 @@
+@import '../../App.scss';
+
+.Dashboard {
+  display: flex;
+  width: 100%;
+  .Wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    span {
+      cursor: pointer;
+      transition: all 0.2s;
+      border-radius: 0.15em;
+      width: 21%;
+      display: flex;
+      padding: 1.2em 0.8em;
+      justify-content: space-between;
+      align-items: center;
+      color: #ffff;
+      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+      background: rgb(50, 169, 171);
+      background: linear-gradient(
+        110deg,
+        rgba(50, 169, 171, 0.981127485173757) 38%,
+        rgba(98, 248, 251, 0.9699230033810399) 100%
+      );
+      svg {
+        font-size: 1.2em;
+        font-weight: lighter;
+        transform: scale(2.5);
+        margin-left: 1.1em;
+      }
+
+      span {
+        background: rgba(255, 255, 255, 0);
+        margin-left: -2em;
+        padding: 0;
+        margin: 0 6em 0 0;
+        box-shadow: none;
+
+        display: flex;
+        flex-direction: column;
+        p {
+          margin: 0;
+          font-size: 1.2em;
+          font-weight: 500;
+        }
+      }
+
+      &:hover {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+        span {
+          box-shadow: none;
+        }
+      }
+    }
+    > span:nth-child(2) {
+      background: rgb(255, 79, 103);
+      background: linear-gradient(
+        110deg,
+        rgba(255, 79, 103, 1) 44%,
+        rgba(254, 194, 202, 0.981127485173757) 100%
+      );
+    }
+
+    > span:nth-child(3) {
+      background: rgb(255, 143, 87);
+      background: linear-gradient(
+        110deg,
+        rgba(255, 143, 87, 1) 44%,
+        rgba(255, 198, 170, 0.919502835313813) 100%
+      );
+    }
+    > span:nth-child(4) {
+      background: rgb(24, 181, 133);
+      background: linear-gradient(
+        110deg,
+        rgba(24, 181, 133, 1) 44%,
+        rgba(95, 255, 206, 0.9279061966583508) 100%
+      );
+    }
+  }
+}
