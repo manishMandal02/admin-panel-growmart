@@ -1,74 +1,118 @@
 @import '../../App.scss';
 
 .Header {
-  width: 80vw;
+  width: 98%;
   display: flex;
   justify-content: flex-end;
-  padding: 0.6em;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  .Container {
-    width: 20vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-right: 0.8em;
-    .Wrapper {
-      width: 9vw;
-      margin-right: 0.8em;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      span {
-        color: #504e4e;
-        padding: 0.2em 0.3em 0.2em 0.3em;
-        border-radius: 0.6em;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-        cursor: pointer;
-        &:hover {
-          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        }
-        svg {
-          font-size: 1.65em;
-        }
-        span {
-          background: rgb(255, 255, 255);
-          background: linear-gradient(
-            207deg,
-            rgba(255, 255, 255, 0.6674019949776786) 0%,
-            rgba(34, 148, 199, 0.846673703661152) 19%
-          );
+  align-items: center;
+  padding: 0.6em 3.6em 0.6em 0;
+  height: 8%;
+  box-shadow: $shadow2;
 
-          color: #ffff;
-          font-weight: 600;
-        }
-      }
-    }
-    .Profile {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  .Wrapper {
+    width: 12%;
+    margin-right: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    span {
+      color: #504e4e;
+      padding: 0.2em 0.3em 0.2em 0.3em;
+      border-radius: 0.6em;
       cursor: pointer;
       &:hover {
-        span {
-          color: $primaryDark-color;
-        }
-        img {
-          transform: scale(1.1);
-        }
+        box-shadow: $shadow2;
       }
-      img {
-        border: 0.02em solid $light-grey;
-        width: 2.4em;
-        border-radius: 50%;
-        transition: all 0.2s;
+      svg {
+        font-size: 1.8em;
       }
       span {
-        font-size: 1.2em;
-        margin: 0 -0.6em 0 0.4em;
-        color: $dark-grey;
-        :nth-child(1) {
-          margin: 0em 0 -0.2em -0.3em;
-          font-size: 1.1em;
+        background-color: $primary-color;
+        color: #ffff;
+        font-size: 1em;
+        font-weight: 600;
+      }
+    }
+  }
+  .Profile {
+    .LoggedUser {
+      display: flex;
+      align-items: center;
+      font-size: 1.36em;
+      cursor: pointer;
+      margin-top: 0.24em;
+      > svg {
+        font-size: 1.8em;
+        transition: all 0.1s;
+        color: $mid-grey;
+      }
+      > p {
+        font-weight: 600;
+        font-size: 1em;
+        display: flex;
+        align-items: center;
+        margin-left: 0.1em;
+        span {
+          svg {
+            margin-left: -0.1em;
+            margin-top: 0.28em;
+            font-size: 1.2em;
+          }
+        }
+      }
+      .UserMenu {
+        z-index: 100;
+        position: fixed;
+        display: none;
+        width: 12%;
+        width: 11%;
+        max-width: 12%;
+        margin-top: 1.7em;
+        margin-left: -0.85em;
+        box-shadow: #959da533 0px 8px 24px;
+        ul {
+          position: absolute;
+          border-top: 2px solid $light-grey;
+          border-radius: 0em 0em 0.2em 0.2em;
+          background-color: #ffff;
+          display: flex;
+          padding: 0;
+          flex-direction: column;
+          z-index: 100;
+          max-width: 100%;
+          width: 100%;
+          overflow: hidden;
+          box-shadow: $shadow3;
+
+          a {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            max-width: 100%;
+            width: 100%;
+            padding: 0.4em 0.8em;
+            text-decoration: none;
+            color: $dark-grey;
+            width: 100%;
+            font-size: 1em;
+            font-weight: 600;
+            svg {
+              font-size: 1.5em;
+              margin-right: 0.2em;
+              color: $mid-grey;
+            }
+            &:hover {
+              background-color: #f1efef;
+              svg {
+                color: $dark-grey;
+              }
+            }
+          }
+        }
+      }
+      &:hover {
+        > svg:nth-child(1) {
+          transform: scale(1.08);
         }
       }
     }

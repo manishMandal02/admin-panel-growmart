@@ -1,0 +1,163 @@
+@import '../../../App.scss';
+
+.Container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  width: 128vw;
+  height: 115vh;
+  background-color: #08aeea;
+  background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
+
+  .LoginForm {
+    position: relative;
+    right: 8%;
+
+    border: 1px solid $light-grey;
+    padding: 1em 1.6em;
+    border-radius: 0.3em;
+
+    background-color: #ffff;
+    width: 16%;
+    height: 36%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .Logo {
+      font-size: 2em;
+      border-radius: 0.2em;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-top: 0.6em;
+      margin-bottom: 0.4em;
+
+      align-items: center;
+
+      svg {
+        margin-right: 0.7em;
+        transform: scale(2);
+      }
+      p {
+        margin: 0;
+        text-align: center;
+        font-weight: 500;
+      }
+    }
+    form {
+      width: 100%;
+      display: flex;
+      height: 40%;
+      margin-top: 1em;
+      flex-direction: column;
+      justify-content: space-around;
+      :nth-child(1) {
+        margin-bottom: 0.3em;
+      }
+      > div:nth-child(3) {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 0.4em;
+        a {
+          text-decoration: none;
+          font-size: 0.8em;
+          color: #2b9ace;
+          font-weight: 600;
+          cursor: pointer;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
+      > button {
+        max-height: 2.3em;
+        overflow: hidden;
+        margin-top: 1em;
+        padding: 0.8em 0.8em 0.8em 0.8em;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        outline: none;
+        color: #ffff;
+        font-size: 1.6em;
+        font-weight: 500;
+        border-radius: 0.1em;
+        transition: all 0.2s;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        background: rgb(42, 227, 134);
+        background: linear-gradient(
+          146deg,
+          rgba(42, 227, 181, 0.911) 21%,
+          rgba(0, 239, 119, 0.705) 100%
+        );
+        &:hover {
+          transform: scale(1.03);
+          // box-shadow: #32325d40 0px 30px 60px -12px,
+          //   #0000004d 0px 18px 36px -18px;
+          // background: linear-gradient(
+          //   280deg,
+          //   rgba(42, 227, 134, 0.9110994739692753) 41%,
+          //   rgba(0, 180, 239, 0.7654412106639531) 100%
+          // );
+        }
+      }
+
+      p {
+        margin: 0.8em 0;
+        font-size: 0.7em;
+        letter-spacing: 0.04em;
+        text-align: center;
+      }
+    }
+    > button {
+      margin-top: 0.6em;
+      padding: 0.6em;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      color: #ffff;
+      font-size: 1.2em;
+      border-radius: 0.2em;
+      transition: all 0.2s;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+      display: flex;
+      margin: 0.2em 0;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid $blue-theme;
+      color: $blue-theme;
+      background-color: #ffff;
+      font-size: 1.1em;
+      &:hover {
+        transform: scale(1.03);
+
+        // box-shadow: #32325d40 0px 30px 60px -12px, #0000004d 0px 18px 36px -18px;
+      }
+      svg {
+        margin-right: 0.6em;
+        margin-bottom: 0.1em;
+      }
+    }
+    > p:nth-child(5) {
+      font-size: 0.8em;
+      margin-top: 2em;
+      a {
+        margin-left: 0.2em;
+        text-decoration: none;
+        color: #2b9ace;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 1.2em;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

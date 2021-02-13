@@ -1,63 +1,81 @@
-import { React, useEffect } from 'react';
+import { React } from 'react';
+import { useLocation, Link, useHistory } from 'react-router-dom';
 
 import {
-  LocalMallOutlined,
   AppsOutlined,
-  CameraAltOutlined,
   StorefrontOutlined,
-  AccountCircleOutlined,
+  AccountCircle,
+  CameraAlt,
+  LocalMall,
 } from '@material-ui/icons';
 
 import classes from './Sidebar.module.scss';
 
-const Sidebar = (props) => {
-  useEffect(() => {
-    const dashboardEl = document.getElementById('dashboard');
-    if (window.location.pathname === '/') {
-      dashboardEl.focus();
-    }
-  }, []);
+const Sidebar = () => {
+  let location = useLocation();
+  let history = useHistory();
+  const pathName = location.pathname;
   return (
     <div className={classes.Sidebar}>
-      <div className={classes.Logo}>
+      <div className={classes.Logo} onClick={() => history.push('/dashboard')}>
         <StorefrontOutlined />
         <span>GrowMart</span>
       </div>
       <div className={classes.MenuContainer}>
         <ul>
           <p>GENERAL</p>
-          <a href='/#' id='dashboard'>
+          <Link
+            className={
+              pathName === '/' || pathName === '/dashboard'
+                ? classes.Active
+                : ''
+            }
+            to='/dashboard'
+            id='dashboard'
+          >
             <span>
               <AppsOutlined />
             </span>
             Dashboard
-          </a>
+          </Link>
         </ul>
 
         <ul>
-          <p>Products</p>
-          <a href='/#'>
+          <p>USERS</p>
+          <Link
+            className={pathName === '/users' ? classes.Active : ''}
+            to='/users'
+          >
             <span>
-              <LocalMallOutlined />
-            </span>
-            Orders
-          </a>
-          <a href='/#'>
-            <span>
-              <CameraAltOutlined />
-            </span>
-            Products
-          </a>
-        </ul>
-
-        <ul>
-          <p>Users</p>
-          <a href='/#'>
-            <span>
-              <AccountCircleOutlined />
+              <AccountCircle />
             </span>
             Users
-          </a>
+          </Link>
+        </ul>
+
+        <ul>
+          <p>PRODUCTS</p>
+          <Link
+            className={pathName === '/products' ? classes.Active : ''}
+            to='/products'
+          >
+            <span>
+              <CameraAlt />
+            </span>
+            Products
+          </Link>
+        </ul>
+        <ul>
+          <p>ORDERS</p>
+          <Link
+            className={pathName === '/orders' ? classes.Active : ''}
+            to='/orders'
+          >
+            <span>
+              <LocalMall />
+            </span>
+            Orders
+          </Link>
         </ul>
       </div>
     </div>

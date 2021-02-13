@@ -1,14 +1,15 @@
 @import '../../App.scss';
 
 .Sidebar {
-  height: 100vh;
-  width: 20vw;
-  max-width: 20vw;
+  height: 100%;
+  width: 20%;
+  max-width: 20%;
   display: flex;
   flex-direction: column;
   background-color: $blue-grey;
   z-index: 500;
   .Logo {
+    cursor: pointer;
     height: 6.5vh;
     padding: 0.4em;
     font-size: 1.7em;
@@ -53,17 +54,17 @@
 
       a {
         outline: none;
-        padding: 0.4em 0em 0.4em 0.4em;
+        padding: 0.6em 0em 0.6em 0.4em;
         width: 95%;
         max-width: 100%;
         display: flex;
         align-items: center;
-        font-size: 1.2em;
+        font-size: 1.3em;
         border-left: 0.2em solid $blue-grey;
-        font-weight: 400;
+        font-weight: 500;
         color: #d6d5d5;
         text-decoration: none;
-        box-shadow: rgba(0, 0, 0, 0.247) 0px 1px 4px;
+        box-shadow: $shadow2;
         span {
           :nth-child(1) {
             font-size: 1.6em;
@@ -71,13 +72,14 @@
           }
         }
         &:hover {
-          background-color: #38445a;
+          background-color: #303a4d;
           border-left: 0.2em solid $primary-color;
         }
-        &:focus {
-          background-color: #38445a;
-          border-left: 0.2em solid $primary-color;
-        }
+      }
+      .Active {
+        background-color: #303a4d;
+        box-shadow: $shadow2;
+        border-left: 0.2em solid $primary-color;
       }
     }
   }

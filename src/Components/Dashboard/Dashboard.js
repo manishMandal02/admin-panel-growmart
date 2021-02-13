@@ -1,43 +1,45 @@
 import React from 'react';
-
+import { useHistory } from 'react-router-dom';
 import {
-  LocalMallOutlined,
-  CameraAltOutlined,
-  AccountCircleOutlined,
-  AccountBalanceWalletOutlined,
+  CameraAlt,
+  AccountCircle,
+  LocalMall,
+  AccountBalanceWallet,
 } from '@material-ui/icons';
 
 import classes from './Dashboard.module.scss';
 
 const Dashboard = () => {
+  const history = useHistory();
   return (
     <div className={classes.Dashboard}>
+      <div className={classes.Bar}></div>
       <div className={classes.Wrapper}>
-        <span>
-          <CameraAltOutlined />
+        <span onClick={() => history.push('/products')}>
+          <CameraAlt />
           <span>
-            <p>Products</p>
+            <p>PRODUCTS</p>
             <p>254</p>
           </span>
         </span>
-        <span>
-          <AccountCircleOutlined />
+        <span onClick={() => history.push('/users')}>
+          <AccountCircle />
           <span>
-            <p>Users</p>
+            <p>USERS</p>
             <p>3565</p>
           </span>
         </span>
-        <span>
-          <LocalMallOutlined />
+        <span onClick={() => history.push('/orders')}>
+          <LocalMall />
           <span>
-            <p>Orders</p>
+            <p>ORDERS</p>
             <p>862</p>
           </span>
         </span>
-        <span>
-          <AccountBalanceWalletOutlined />
+        <span onClick={() => history.push('/sales')}>
+          <AccountBalanceWallet />
           <span>
-            <p>Sales</p>
+            <p>SALES</p>
             <p>$6468</p>
           </span>
         </span>
