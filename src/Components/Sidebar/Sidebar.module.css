@@ -1,0 +1,120 @@
+.Sidebar {
+  height: 100%;
+  width: 17%;
+  max-width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #3f4d66;
+  z-index: 500;
+}
+
+.Sidebar .Logo {
+  cursor: pointer;
+  height: 6.5vh;
+  padding: 0.4em;
+  font-size: 1.7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: azure;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.Sidebar .Logo :nth-child(1) {
+  font-size: 1.2em;
+  margin-left: -0.6em;
+}
+
+.Sidebar .Logo span {
+  font-weight: 500;
+  margin-left: 0.3em;
+}
+
+.Sidebar .MenuContainer {
+  margin-top: 1em;
+  margin-left: 0em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em 0;
+  max-width: 100%;
+}
+
+.Sidebar .MenuContainer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0em;
+  padding: 0.6em 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.Sidebar .MenuContainer ul P {
+  text-align: start;
+  font-size: 1.1em;
+  color: #d6d5d5;
+  margin: 0 0 0.4em 0.7em;
+  font-weight: 500;
+}
+
+.Sidebar .MenuContainer ul a {
+  outline: none;
+  padding: 0.6em 0em 0.6em 0.4em;
+  width: 95%;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.1em;
+  border-left: 0.2em solid #3f4d66;
+  font-weight: 500;
+  color: #d6d5d5;
+  text-decoration: none;
+  -webkit-box-shadow: #00000026 1.95px 1.95px 2.6px;
+          box-shadow: #00000026 1.95px 1.95px 2.6px;
+}
+
+.Sidebar .MenuContainer ul a span :nth-child(1) {
+  font-size: 1.6em;
+  margin: 0.15em 0.4em 0 0;
+}
+
+.Sidebar .MenuContainer ul a:hover {
+  background-color: #303a4d;
+  border-left: 0.2em solid #00b5b8;
+}
+
+.Sidebar .MenuContainer ul .Active {
+  background-color: #303a4d;
+  -webkit-box-shadow: #00000026 1.95px 1.95px 2.6px;
+          box-shadow: #00000026 1.95px 1.95px 2.6px;
+  border-left: 0.2em solid #00b5b8;
+}
+/*# sourceMappingURL=Sidebar.module.css.map */

@@ -11,6 +11,14 @@ import {
   UPDATE_USER_SUCCESS,
   UPDATE_USER_FAIL,
   UPDATE_USER_RESET,
+  CREATE_USER_SUCCESS,
+  CREATE_USER_REQUEST,
+  CREATE_USER_FAIL,
+  CREATE_USER_RESET,
+  DELETE_USER_REQUEST,
+  DELETE_USER_SUCCESS,
+  DELETE_USER_FAIL,
+  DELETE_USER_RESET,
 } from '../Actions/ActionTypes';
 
 const adminLogin = (state = {}, action) => {
@@ -70,7 +78,6 @@ const updateuserReducer = (state = {}, action) => {
       return {
         loading: false,
         success: true,
-        user: action.payload,
       };
     case UPDATE_USER_FAIL:
       return {
@@ -85,8 +92,58 @@ const updateuserReducer = (state = {}, action) => {
   }
 };
 
+const createUserReducer = (state = {}, action) => {
+  switch (action.type) {
+    case CREATE_USER_REQUEST:
+      return {
+        loading: true,
+      };
+    case CREATE_USER_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+      };
+    case CREATE_USER_FAIL:
+      return {
+        loading: false,
+        success: false,
+        error: action.payload,
+      };
+    case CREATE_USER_RESET:
+      return {};
+    default:
+      return state;
+  }
+};
+
+const deleteeUserReducer = (state = {}, action) => {
+  switch (action.type) {
+    case DELETE_USER_REQUEST:
+      return {
+        loading: true,
+      };
+    case DELETE_USER_SUCCESS:
+      return {
+        loading: false,
+        success: true,
+      };
+    case DELETE_USER_FAIL:
+      return {
+        loading: false,
+        success: false,
+        error: action.payload,
+      };
+    case DELETE_USER_RESET:
+      return {};
+    default:
+      return state;
+  }
+};
+
 export const usersReducer = combineReducers({
   getUsers: getUsersReducer,
   admin: adminLogin,
   updateUser: updateuserReducer,
+  createUser: createUserReducer,
+  deleteUser: deleteeUserReducer,
 });

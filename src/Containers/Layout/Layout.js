@@ -9,6 +9,9 @@ import Users from '../../Components/Users/Users';
 import Products from '../../Components/Products/Products';
 import Orders from '../../Components/Orders/Orders';
 import Login from '../../Components/Auth/Login/Login';
+import CreateUser from '../../Components/Users/CreateUser/CreateUser';
+import EditProdct from '../../Components/Products/UpdateProduct/EditProduct';
+import CreateProdct from '../../Components/Products/CreateProduct/CreateProduct';
 
 const Layout = () => {
   return (
@@ -18,8 +21,11 @@ const Layout = () => {
         <div className={classes.Container}>
           <Header />
           <main className={classes.Main}>
-            <Route path='/users' component={Users} />
-            <Route path='/products' component={Products} />
+            <Route path='/users/create' component={CreateUser} exact />
+            <Route path='/products/edit/:id' component={EditProdct} exact />
+            <Route path='/products/create/' component={CreateProdct} exact />
+            <Route path='/users/' component={Users} exact />
+            <Route path='/products/' component={Products} exact />
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/orders' component={Orders} />
             <Route path='/' component={Login} exact />

@@ -1,0 +1,162 @@
+.Header {
+  width: 98%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.6em 3.6em 0.6em 0;
+  height: 8%;
+  -webkit-box-shadow: #00000026 1.95px 1.95px 2.6px;
+          box-shadow: #00000026 1.95px 1.95px 2.6px;
+}
+
+.Header .Wrapper {
+  width: 12%;
+  margin-right: 0.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Header .Wrapper span {
+  color: #504e4e;
+  padding: 0.2em 0.3em 0.2em 0.3em;
+  border-radius: 0.6em;
+  cursor: pointer;
+}
+
+.Header .Wrapper span:hover {
+  -webkit-box-shadow: #00000026 1.95px 1.95px 2.6px;
+          box-shadow: #00000026 1.95px 1.95px 2.6px;
+}
+
+.Header .Wrapper span svg {
+  font-size: 1.8em;
+}
+
+.Header .Wrapper span span {
+  background-color: #00b5b8;
+  color: #ffff;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.Header .Profile .LoggedUser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.36em;
+  cursor: pointer;
+  margin-top: 0.24em;
+}
+
+.Header .Profile .LoggedUser > svg {
+  font-size: 1.8em;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  color: #7a7979;
+}
+
+.Header .Profile .LoggedUser > p {
+  font-weight: 600;
+  font-size: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 0.1em;
+}
+
+.Header .Profile .LoggedUser > p span svg {
+  margin-left: -0.1em;
+  margin-top: 0.28em;
+  font-size: 1.2em;
+}
+
+.Header .Profile .LoggedUser .UserMenu {
+  z-index: 100;
+  position: fixed;
+  display: none;
+  width: 12%;
+  width: 11%;
+  max-width: 12%;
+  margin-top: 0.7em;
+  -webkit-box-shadow: #959da533 0px 8px 24px;
+          box-shadow: #959da533 0px 8px 24px;
+}
+
+.Header .Profile .LoggedUser .UserMenu ul {
+  position: absolute;
+  border-top: 2px solid #d4d4d4;
+  border-radius: 0em 0em 0.2em 0.2em;
+  background-color: #ffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 100;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  -webkit-box-shadow: #ffffff1a 0px 1px 1px 0px inset, #32325d40 0px 50px 100px -20px, #0000004d 0px 30px 60px -30px;
+          box-shadow: #ffffff1a 0px 1px 1px 0px inset, #32325d40 0px 50px 100px -20px, #0000004d 0px 30px 60px -30px;
+}
+
+.Header .Profile .LoggedUser .UserMenu ul a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 100%;
+  width: 100%;
+  padding: 0.4em 0.8em;
+  text-decoration: none;
+  color: #35373de5;
+  width: 100%;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.Header .Profile .LoggedUser .UserMenu ul a svg {
+  font-size: 1.5em;
+  margin-right: 0.2em;
+  color: #7a7979;
+}
+
+.Header .Profile .LoggedUser .UserMenu ul a:hover {
+  background-color: #f1efef;
+}
+
+.Header .Profile .LoggedUser .UserMenu ul a:hover svg {
+  color: #35373de5;
+}
+
+.Header .Profile .LoggedUser:hover > svg:nth-child(1) {
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+/*# sourceMappingURL=Header.module.css.map */

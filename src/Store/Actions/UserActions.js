@@ -10,6 +10,12 @@ import {
   UPDATE_USER_REQUEST,
   UPDATE_USER_SUCCESS,
   UPDATE_USER_FAIL,
+  DELETE_USER_SUCCESS,
+  DELETE_USER_REQUEST,
+  DELETE_USER_FAIL,
+  CREATE_USER_FAIL,
+  CREATE_USER_REQUEST,
+  CREATE_USER_SUCCESS,
 } from '../Actions/ActionTypes';
 
 //Admin Login Action
@@ -129,6 +135,84 @@ export const updateUser = (id, { name, email, isAdmin }) => async (
   } catch (error) {
     dispatch({
       type: UPDATE_USER_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+//Create  users
+export const createUserAction = ({
+  name,
+  email,
+  password,
+  confirmpassword,
+  isAdmin,
+}) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: CREATE_USER_REQUEST,
+    });
+
+    if (password !== confirmpassword) {
+      throw new Error('passwords do not match');
+    }
+
+    const {
+      user: { admin },
+    } = getState();
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${admin.adminInfo.token}`,
+      },
+    };
+
+    await axios.post(`/api/users/`, { name, email, password, isAdmin }, config);
+
+    dispatch({
+      type: CREATE_USER_SUCCESS,
+    });
+  } catch (error) {
+    dispatch({
+      type: CREATE_USER_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+//delete  users
+export const deleteUserAction = (id) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: DELETE_USER_REQUEST,
+    });
+
+    const {
+      user: { admin },
+    } = getState();
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${admin.adminInfo.token}`,
+      },
+    };
+
+    await axios.get(`/api/users/${id}`, config);
+
+    dispatch({
+      type: DELETE_USER_SUCCESS,
+    });
+  } catch (error) {
+    dispatch({
+      type: DELETE_USER_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

@@ -6,20 +6,53 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 1em 1em 2em 2em;
+  padding: 2em 1em 2em 1em;
   background-color: $white-grey;
   // background-image: linear-gradient(90deg, #74ebd5da 0%, #57d198d5 100%);
 
+  .AddUser {
+    position: absolute;
+    top: 9.3%;
+    margin: 0.2em 0 0.6em 0;
+    right: 6.8%;
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: $shadow2;
+      width: 100%;
+      cursor: pointer;
+      outline: none;
+      padding: 0.6em 0.8em;
+      border: none;
+      border-radius: 0.2em;
+      font-size: 1.1em;
+      font-weight: 500;
+      color: #ffff;
+      background-color: $primary-color;
+      transition: all 0.1s;
+      &:hover {
+        transform: scale(1.02);
+      }
+      svg {
+        font-size: 1.1em;
+        transform: scale(1.5);
+        font-weight: 600;
+        margin-right: 0.3em;
+      }
+    }
+  }
   .UsersList {
     width: 90%;
-    height: 95%;
+    height: 92%;
     background: #ffff;
-    box-shadow: $shadow1;
+    box-shadow: $shadow2;
     border-radius: 0.2em;
     table {
       width: 100%;
       padding-left: 0.8em;
       border-collapse: collapse;
+      counter-reset: rowNumber;
       td th {
         border: 1px solid $light-grey;
         // border-bottom: 3px solid $light-grey;
@@ -29,10 +62,10 @@
           border-bottom: 1px solid $light-grey;
           border-right: 1px solid $light-grey;
         }
-        th:nth-child(5) {
+        th:nth-child(6) {
           font-size: 1.06em;
         }
-        th:nth-child(6) {
+        th:nth-child(7) {
           border-bottom: 1px solid $light-grey;
           border-right: none;
           margin: 0;
@@ -49,7 +82,16 @@
           }
         }
       }
+
       tbody {
+        tr:nth-child(n + 1) {
+          counter-increment: rowNumber;
+        }
+        tr:nth-child(n + 1) td:first-child::before {
+          content: counter(rowNumber);
+          min-width: 1em;
+          margin-right: 0.1em;
+        }
         td {
           border: 1px solid $light-grey;
         }
@@ -69,8 +111,8 @@
         tr {
           border-bottom: 1px solid $light-grey;
           td {
-            padding: 0.5em;
-            font-size: 1.1em;
+            padding: 0.28em;
+            font-size: 1.08em;
             font-weight: 500;
           }
         }
@@ -79,13 +121,19 @@
         // }
       }
     }
+    .Pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.8em 0em 0.15em 0;
+    }
   }
 }
 //########
 
 .ButtonWrapper {
   display: flex;
-  padding: 0.2em 0.2em 0em 0.4em;
+  padding: 0.2em 0em 0em 0.4em;
   button {
     display: flex;
     cursor: pointer;
@@ -112,4 +160,11 @@
       background-color: #ffff;
     }
   }
+}
+
+.Name {
+  width: 16%;
+}
+.Email {
+  width: 20%;
 }

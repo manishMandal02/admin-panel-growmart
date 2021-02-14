@@ -1,24 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useHistory } from 'react-router-dom';
-import { CircularProgress, Snackbar, Tooltip } from '@material-ui/core';
-import { Alert } from '@material-ui/lab';
-import { Delete, Edit } from '@material-ui/icons';
+import { useHistory } from 'react-router-dom';
+import { CircularProgress, Tooltip } from '@material-ui/core';
+import { Alert, Pagination } from '@material-ui/lab';
+import { Add, Delete, Edit } from '@material-ui/icons';
 
 import classes from './Users.module.scss';
 import { getUsersAction } from '../../Store/Actions/UserActions';
 import EditUser from './EditUser/EditUser';
 import Modal from '../UI/Modal/Modal';
 import DeleteUserModal from './DeleteUserModal/DeleteUserModal';
-import { UPDATE_USER_RESET } from '../../Store/Actions/ActionTypes';
 
 //#######
 const Users = () => {
+  //initialize
+  const dispatch = useDispatch();
+  const history = useHistory();
+
   //state
   const [showEditModal, setShowEditModal] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [snackbarShow, setSnackbarShow] = useState(false);
+  const [successUpdate, setSuccessUpdate] = useState(false);
+  const [successDelete, setSuccessDelete] = useState(false);
   const [clickedUser, setClickedUser] = useState({
     name: '',
     email: '',
@@ -28,18 +31,7 @@ const Users = () => {
     isAdmin: false,
   });
 
-  const dispatch = useDispatch();
-  const history = useHistory();
-
-  if (success) {
-    dispatch({
-      type: UPDATE_USER_RESET,
-    });
-  }
-
   const { adminInfo } = useSelector((state) => state.user.admin);
-
-  // const user = useSelector((state) => state.user.updateUser);
 
   const { users, loading, error } = useSelector((state) => state.user.getUsers);
 
@@ -48,18 +40,15 @@ const Users = () => {
       history.push('/');
     }
     dispatch(getUsersAction());
-  }, [dispatch, adminInfo, history, success]);
+  }, [dispatch, adminInfo, history, successUpdate, successDelete]);
 
-  //delete user handler
-  const deleteUserHandler = (e) => {
-    // e.stopPropagation();
-  };
   return (
     <div className={classes.Container}>
       <div className={classes.UsersList}>
         <table>
           <thead>
             <tr>
+              <th></th>
               <th>Id</th>
               <th>Name</th>
               <th>Email</th>
@@ -83,11 +72,22 @@ const Users = () => {
             <tbody>
               {users.map((user) => (
                 <tr>
-                  <td>{user._id}</td>
-                  <td className={classes.Name}>{user.name}</td>
-                  <td>{user.email}</td>
+                  <td></td>
+                  <td className={classes.Id}> {user._id}</td>
+                  <td className={classes.Name}>
+                    {user.name.length > 15
+                      ? `${user.name.substring(0, 13)}...`
+                      : user.name}
+                  </td>
+                  <td className={classes.Email}>
+                    {user.email.length > 19
+                      ? ` ${user.email.substring(0, 20)}..`
+                      : user.email}
+                  </td>
                   <td>{user.isAdmin ? 'Admin' : 'User'}</td>
-                  <td>{user.createdAt.substring(0, 10)}</td>
+                  <td className={classes.CreatedDate}>
+                    {user.createdAt.substring(0, 10)}
+                  </td>
                   <td>
                     <div className={classes.ButtonWrapper}>
                       <Tooltip title='Edit User' placement='top' arrow>
@@ -135,7 +135,7 @@ const Users = () => {
             show={showEditModal}
             closeModal={() => setShowEditModal(false)}
             user={clickedUser}
-            successUpdate={() => setSuccess(success ? false : true)}
+            successUpdate={() => setSuccessUpdate(successUpdate ? false : true)}
           />
         </Modal>
         <Modal
@@ -146,16 +146,27 @@ const Users = () => {
             show={showDeleteModal}
             closeModal={() => setShowDeleteModal(false)}
             user={clickedUser}
+            successDelete={() => setSuccessDelete(successDelete ? false : true)}
           />
         </Modal>
+        <div className={classes.Pagination}>
+          <Pagination
+            count={10}
+            color='primary'
+            variant='outlined'
+            shape='rounded'
+            size='large'
+          />
+        </div>
       </div>
-      <Snackbar
-        open={snackbarShow}
-        autoHideDuration={2000}
-        onClose={() => setSnackbarShow(false)}
+      <div
+        className={classes.AddUser}
+        onClick={() => history.push('/users/create-user')}
       >
-        <Alert severity='success'>This is a success message!</Alert>
-      </Snackbar>
+        <button>
+          <Add /> Add User
+        </button>
+      </div>
     </div>
   );
 };

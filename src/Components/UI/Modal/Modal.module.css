@@ -1,0 +1,34 @@
+.Backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 110;
+  left: 0;
+  top: 0;
+  background-color: #7c7c7c77;
+}
+
+.Modal {
+  position: fixed;
+  z-index: 1000;
+  background-color: white;
+  margin: auto auto;
+  border-radius: 0.6em;
+  -webkit-box-shadow: #00000026 1.95px 1.95px 2.6px;
+          box-shadow: #00000026 1.95px 1.95px 2.6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+@media (min-width: 600px) {
+  .Modal {
+    position: fixed;
+    top: 50%;
+    left: 55%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+/*# sourceMappingURL=Modal.module.css.map */

@@ -1,0 +1,10 @@
+.Backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 50;
+  left: 0;
+  top: 0;
+  background-color: #ffffff00;
+}
+/*# sourceMappingURL=Backdrop.module.css.map */

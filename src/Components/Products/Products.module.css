@@ -1,0 +1,205 @@
+.Container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 2em 1em 2em 1em;
+  background-color: #f1f3f6;
+}
+
+.Container .Addproduct {
+  position: absolute;
+  top: 9.3%;
+  margin: 0.2em 0 0.6em 0;
+  right: 6.8%;
+}
+
+.Container .Addproduct button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: #00000026 1.95px 1.95px 2.6px;
+          box-shadow: #00000026 1.95px 1.95px 2.6px;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  padding: 0.6em 0.8em;
+  border: none;
+  border-radius: 0.2em;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #ffff;
+  background-color: #00b5b8;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.Container .Addproduct button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.Container .Addproduct button svg {
+  font-size: 1.1em;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  font-weight: 600;
+  margin-right: 0.3em;
+}
+
+.Container .productsList {
+  width: 90%;
+  height: 92%;
+  background: #ffff;
+  -webkit-box-shadow: #00000026 1.95px 1.95px 2.6px;
+          box-shadow: #00000026 1.95px 1.95px 2.6px;
+  border-radius: 0.2em;
+}
+
+.Container .productsList table {
+  width: 100%;
+  padding-left: 0.8em;
+  border-collapse: collapse;
+  counter-reset: rowNumber;
+}
+
+.Container .productsList table td th {
+  border: 1px solid #d4d4d4;
+}
+
+.Container .productsList table thead th {
+  border-bottom: 1px solid #d4d4d4;
+  border-right: 1px solid #d4d4d4;
+}
+
+.Container .productsList table thead th:nth-child(6) {
+  font-size: 1.06em;
+}
+
+.Container .productsList table thead th:nth-child(7) {
+  border-bottom: 1px solid #d4d4d4;
+  border-right: none;
+  margin: 0;
+}
+
+.Container .productsList table thead tr {
+  background-color: #2eaf59;
+  -webkit-box-shadow: #00000026 1.95px 1.95px 2.6px;
+          box-shadow: #00000026 1.95px 1.95px 2.6px;
+}
+
+.Container .productsList table thead tr th {
+  color: #ffffff;
+  text-align: left;
+  padding: 0.6em 0.6em;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.Container .productsList table tbody tr:nth-child(n + 1) {
+  counter-increment: rowNumber;
+}
+
+.Container .productsList table tbody tr:nth-child(n + 1) td:first-child::before {
+  content: counter(rowNumber);
+  min-width: 1em;
+  margin-right: 0.1em;
+}
+
+.Container .productsList table tbody td {
+  border: 1px solid #d4d4d4;
+}
+
+.Container .productsList table tbody > tr:nth-child(odd) {
+  background-color: #f5f5f5;
+}
+
+.Container .productsList table tbody > tr:nth-child(odd):hover {
+  background-color: #e7e7e7;
+}
+
+.Container .productsList table tbody > tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.Container .productsList table tbody > tr:nth-child(even):hover {
+  background-color: #e9e9e9;
+}
+
+.Container .productsList table tbody tr {
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.Container .productsList table tbody tr td {
+  padding: 0.28em;
+  font-size: 1.08em;
+  font-weight: 500;
+}
+
+.Container .productsList .Pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0.8em 0em 0.15em 0;
+}
+
+.ButtonWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0.2em 0em 0em 0.4em;
+}
+
+.ButtonWrapper button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  background: #40add8;
+  color: #ffff;
+  outline: none;
+  border: none;
+  border: 2px solid #40add8;
+  border-radius: 0.4em;
+  padding: 0.3em 0.5em;
+}
+
+.ButtonWrapper button:hover {
+  color: #40add8;
+  background-color: #ffff;
+}
+
+.ButtonWrapper > button:nth-child(2) {
+  margin-left: 1.3em;
+  background-color: #e0472c;
+  border: 2px solid #e0472c;
+}
+
+.ButtonWrapper > button:nth-child(2):hover {
+  color: #e0472c;
+  background-color: #ffff;
+}
+
+.Name {
+  width: 16%;
+}
+/*# sourceMappingURL=Products.module.css.map */

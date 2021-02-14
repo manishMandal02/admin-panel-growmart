@@ -1,0 +1,210 @@
+.Container {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1000;
+  width: 128vw;
+  height: 115vh;
+  background-color: #08aeea;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#08aeea), to(#2af598));
+  background-image: linear-gradient(0deg, #08aeea 0%, #2af598 100%);
+}
+
+.Container .LoginForm {
+  position: relative;
+  right: 8%;
+  border: 1px solid #d4d4d4;
+  padding: 1em 1.6em;
+  border-radius: 0.3em;
+  background-color: #ffff;
+  width: 16%;
+  height: 36%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Container .LoginForm .Logo {
+  font-size: 2em;
+  border-radius: 0.2em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Container .LoginForm .Logo svg {
+  margin-right: 0.7em;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.Container .LoginForm .Logo p {
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.Container .LoginForm form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40%;
+  margin-top: 1em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.Container .LoginForm form :nth-child(1) {
+  margin-bottom: 0.3em;
+}
+
+.Container .LoginForm form > div:nth-child(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 0.4em;
+}
+
+.Container .LoginForm form > div:nth-child(3) a {
+  text-decoration: none;
+  font-size: 0.8em;
+  color: #2b9ace;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.Container .LoginForm form > div:nth-child(3) a:hover {
+  color: #00b5b8;
+}
+
+.Container .LoginForm form > button {
+  max-height: 2.3em;
+  overflow: hidden;
+  margin-top: 1em;
+  padding: 0.8em 0.8em 0.8em 0.8em;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  outline: none;
+  color: #ffff;
+  font-size: 1.6em;
+  font-weight: 500;
+  border-radius: 0.1em;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background: #2ae386;
+  background: linear-gradient(146deg, rgba(42, 227, 181, 0.911) 21%, rgba(0, 239, 119, 0.705) 100%);
+}
+
+.Container .LoginForm form > button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.Container .LoginForm form p {
+  margin: 0.8em 0;
+  font-size: 0.7em;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.Container .LoginForm > button {
+  margin-top: 0.6em;
+  padding: 0.6em;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #ffff;
+  font-size: 1.2em;
+  border-radius: 0.2em;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.2em 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #40add8;
+  color: #40add8;
+  background-color: #ffff;
+  font-size: 1.1em;
+}
+
+.Container .LoginForm > button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.Container .LoginForm > button svg {
+  margin-right: 0.6em;
+  margin-bottom: 0.1em;
+}
+
+.Container .LoginForm > p:nth-child(5) {
+  font-size: 0.8em;
+  margin-top: 2em;
+}
+
+.Container .LoginForm > p:nth-child(5) a {
+  margin-left: 0.2em;
+  text-decoration: none;
+  color: #2b9ace;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.Container .LoginForm > p:nth-child(5) a:hover {
+  color: #00b5b8;
+}
+/*# sourceMappingURL=Login.module.css.map */

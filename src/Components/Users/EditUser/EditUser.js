@@ -1,11 +1,11 @@
-import { CircularProgress, Snackbar } from '@material-ui/core';
-import React, { useState, useEffect } from 'react';
+import { CircularProgress } from '@material-ui/core';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Modal from '../../UI/Modal/Modal';
 
 import classes from './EditUser.module.scss';
 import { updateUser } from '../../../Store/Actions/UserActions';
 import { Alert } from '@material-ui/lab';
+import { UPDATE_USER_RESET } from '../../../Store/Actions/ActionTypes';
 
 const EditUser = ({ show, closeModal, user, successUpdate }) => {
   //Initialize
@@ -20,11 +20,14 @@ const EditUser = ({ show, closeModal, user, successUpdate }) => {
   );
   if (success) {
     setTimeout(() => {
+      dispatch({
+        type: UPDATE_USER_RESET,
+      });
       successUpdate();
       closeModal();
     }, 2000);
   }
-  console.log(isAdmin);
+  // console.log(isAdmin);
   //update user handler
   const updateUserHandler = (e) => {
     e.preventDefault();
@@ -44,7 +47,21 @@ const EditUser = ({ show, closeModal, user, successUpdate }) => {
       <p>EDIT USER</p>
 
       {error ? (
-        <Alert severity='error' variant='outlined'></Alert>
+        <Alert
+          style={{ margin: '0 0.6em ' }}
+          severity='error'
+          variant='outlined'
+        >
+          {error}
+        </Alert>
+      ) : success ? (
+        <Alert
+          style={{ margin: '0 0.6em' }}
+          severity='success'
+          variant='filled'
+        >
+          User Updated
+        </Alert>
       ) : (
         <div className={classes.UserInfo}>
           <p className={classes.UserID}>

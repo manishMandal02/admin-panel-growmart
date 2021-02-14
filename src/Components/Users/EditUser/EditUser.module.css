@@ -1,0 +1,130 @@
+.Container {
+  width: 25em;
+  height: 24em;
+  max-width: 28em;
+  overflow: hidden;
+}
+
+.Container > p {
+  font-size: 1.6em;
+  margin: 0;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  color: #35373de5;
+  text-align: center;
+  border-bottom: 2px solid #7a7979;
+  padding: 0.4em 0 0.25em 0;
+}
+
+.Container .UserInfo {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+}
+
+.Container .UserInfo .UserID {
+  width: 100%;
+  padding: 0.4em 0.4em;
+  text-align: center;
+  border-bottom: 1px solid #d4d4d4;
+  font-size: 1em;
+  font-weight: 500;
+  display: inline;
+  margin: 0 0 0.2em 0;
+}
+
+.Container .UserInfo .UserID span {
+  margin-left: 0.2em;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.Container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding-left: 1em;
+}
+
+.Container form p {
+  margin: 0.8em 0 0.2em 0;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.Container form input {
+  font-size: 1em;
+  padding: 0.4em 0.6em;
+  outline: none;
+  width: 60%;
+  border: 1px solid #d4d4d4;
+}
+
+.Container form select {
+  margin: 0.4em;
+  padding: 0.18em 1em 0.18em 0.4em;
+  font-size: 0.9em;
+  border: 1px solid #7a7979;
+  outline: none;
+}
+
+.Container form span {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: -1em;
+}
+
+.Container form span button {
+  width: 38%;
+  margin: 1.6em 0 0em 0;
+  cursor: pointer;
+  outline: none;
+  padding: 0.8em 1.2em;
+  border: none;
+  border-radius: 0.2em;
+  font-size: 1em;
+  font-weight: 600;
+  color: #ffff;
+  background-color: #1cc576;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.Container form span button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.Container form span .CancelButton {
+  width: 25%;
+  margin-right: 0.6em;
+  background-color: #7a7979;
+}
+/*# sourceMappingURL=EditUser.module.css.map */

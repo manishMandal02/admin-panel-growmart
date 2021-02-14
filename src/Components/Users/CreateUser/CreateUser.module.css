@@ -1,0 +1,164 @@
+.GoBack {
+  position: absolute;
+  top: 12%;
+  margin: 0.2em 0 0.6em 0;
+  left: 6.8%;
+}
+
+.GoBack button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: #00000026 1.95px 1.95px 2.6px;
+          box-shadow: #00000026 1.95px 1.95px 2.6px;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  padding: 0.6em 0.8em;
+  border: none;
+  border-radius: 0.2em;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #ffff;
+  background-color: #7a7979;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.GoBack button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.GoBack button svg {
+  font-size: 1.1em;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  font-weight: 600;
+  margin-right: 0.3em;
+}
+
+.Wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Wrapper .CreateUserContainer {
+  width: 26em;
+  height: 31em;
+  max-width: 28em;
+  overflow: hidden;
+  border: 1px solid #7a7979;
+  border-top: none;
+  border-bottom: 2px solid #7a7979;
+  -webkit-box-shadow: #00000026 1.95px 1.95px 2.6px;
+          box-shadow: #00000026 1.95px 1.95px 2.6px;
+  margin-top: 0.6em;
+}
+
+.Wrapper .CreateUserContainer > p {
+  font-size: 1.7em;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  color: #ffff;
+  text-align: center;
+  padding: 0.4em 0;
+  background-color: #2eaf59;
+  margin: 0 0 0 0;
+}
+
+.Wrapper .CreateUserContainer form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding-left: 1em;
+}
+
+.Wrapper .CreateUserContainer form p {
+  margin: 0.7em 0 0.2em 0;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.Wrapper .CreateUserContainer form p:nth-child(1) {
+  margin: 0.6em 0 0.2em 0;
+}
+
+.Wrapper .CreateUserContainer form input {
+  font-size: 1em;
+  padding: 0.4em 0.6em;
+  outline: none;
+  width: 85%;
+  border: 1px solid #7a7979;
+}
+
+.Wrapper .CreateUserContainer form select {
+  margin: 0.4em;
+  padding: 0.18em 1em 0.18em 0.4em;
+  font-size: 0.9em;
+  border: 1px solid #7a7979;
+  outline: none;
+}
+
+.Wrapper .CreateUserContainer form span {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.Wrapper .CreateUserContainer form span button {
+  width: 38%;
+  margin: 1em 0 0em 0;
+  cursor: pointer;
+  outline: none;
+  padding: 0.8em 1.2em;
+  border: none;
+  border-radius: 0.2em;
+  font-size: 1em;
+  font-weight: 600;
+  color: #ffff;
+  background-color: #1cc576;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+
+.Wrapper .CreateUserContainer form span button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.Wrapper .CreateUserContainer form span .CancelButton {
+  width: 25%;
+  margin-right: 0.6em;
+  background-color: #7a7979;
+}
+/*# sourceMappingURL=CreateUser.module.css.map */

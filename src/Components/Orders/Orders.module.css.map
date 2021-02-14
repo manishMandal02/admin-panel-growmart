@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,UAAU,CAAC;EACT,OAAO,EAAE,IAAI;CACd",
+    "sources": [
+        "Orders.module.scss",
+        "../../App.scss"
+    ],
+    "names": [],
+    "file": "Orders.module.css"
+}

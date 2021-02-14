@@ -1,0 +1,118 @@
+@import '../../../App.scss;
+
+.GoBack {
+  position: absolute;
+  top: 12%;
+  margin: 0.2em 0 0.6em 0;
+  left: 6.8%;
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $shadow2;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    padding: 0.6em 0.8em;
+    border: none;
+    border-radius: 0.2em;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #ffff;
+    background-color: $mid-grey;
+    transition: all 0.1s;
+    &:hover {
+      transform: scale(1.02);
+    }
+    svg {
+      font-size: 1.1em;
+      transform: scale(1.2);
+      font-weight: 600;
+      margin-right: 0.3em;
+    }
+  }
+}
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  .CreateUserContainer {
+    width: 26em;
+    height: 31em;
+    max-width: 28em;
+    overflow: hidden;
+    border: 1px solid $mid-grey;
+    border-top: none;
+    border-bottom: 2px solid $mid-grey;
+    box-shadow: $shadow2;
+    margin-top: 0.6em;
+    > p {
+      font-size: 1.7em;
+      letter-spacing: 0.01em;
+      font-weight: 600;
+      color: #ffff;
+      text-align: center;
+      padding: 0.4em 0;
+      background-color: $green-color;
+      margin: 0 0 0 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      padding-left: 1em;
+      p {
+        margin: 0.7em 0 0.2em 0;
+        font-size: 1.2em;
+        font-weight: 500;
+      }
+      p:nth-child(1) {
+        margin: 0.6em 0 0.2em 0;
+      }
+      input {
+        font-size: 1em;
+        padding: 0.4em 0.6em;
+        outline: none;
+        width: 85%;
+        border: 1px solid $mid-grey;
+      }
+      select {
+        margin: 0.4em;
+        padding: 0.18em 1em 0.18em 0.4em;
+        font-size: 0.9em;
+        border: 1px solid $mid-grey;
+        outline: none;
+      }
+      span {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        button {
+          width: 38%;
+          margin: 1em 0 0em 0;
+          cursor: pointer;
+          outline: none;
+          padding: 0.8em 1.2em;
+          border: none;
+          border-radius: 0.2em;
+          font-size: 1em;
+          font-weight: 600;
+          color: #ffff;
+          background-color: #1cc576;
+          transition: all 0.1s;
+          &:hover {
+            transform: scale(1.02);
+          }
+        }
+        .CancelButton {
+          width: 25%;
+          margin-right: 0.6em;
+          background-color: $mid-grey;
+        }
+      }
+    }
+  }
+}
