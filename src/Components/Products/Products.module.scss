@@ -6,15 +6,15 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 2em 1em 2em 1em;
+  padding: 2em 1em 1em 1em;
   background-color: $white-grey;
   // background-image: linear-gradient(90deg, #74ebd5da 0%, #57d198d5 100%);
 
   .Addproduct {
     position: absolute;
-    top: 9.3%;
+    top: 10%;
     margin: 0.2em 0 0.6em 0;
-    right: 6.8%;
+    right: 4%;
     button {
       display: flex;
       align-items: center;
@@ -23,28 +23,29 @@
       width: 100%;
       cursor: pointer;
       outline: none;
-      padding: 0.6em 0.8em;
+      padding: 0.5em 0.6em;
       border: none;
       border-radius: 0.2em;
-      font-size: 1.1em;
+      font-size: 1.2em;
       font-weight: 500;
       color: #ffff;
-      background-color: $primary-color;
+      // background-color: $blue-theme;
+      background-color: $green-color;
       transition: all 0.1s;
       &:hover {
         transform: scale(1.02);
       }
       svg {
-        font-size: 1.1em;
+        font-size: 1.15em;
         transform: scale(1.5);
         font-weight: 600;
-        margin-right: 0.3em;
+        margin-right: 0.2em;
       }
     }
   }
   .productsList {
-    width: 90%;
-    height: 92%;
+    width: 99%;
+    height: 93%;
     background: #ffff;
     box-shadow: $shadow2;
     border-radius: 0.2em;
@@ -71,7 +72,7 @@
           margin: 0;
         }
         tr {
-          background-color: $green-color;
+          background-color: #328fdb;
           box-shadow: $shadow2;
           th {
             color: #ffffff;
@@ -137,11 +138,11 @@
   button {
     display: flex;
     cursor: pointer;
-    background: $blue-color;
+    background: $green-color;
     color: #ffff;
     outline: none;
     border: none;
-    border: 2px solid $blue-color;
+    border: 2px solid $green-color;
     border-radius: 0.4em;
     padding: 0.3em 0.5em;
     &:hover {

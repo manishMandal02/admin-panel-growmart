@@ -161,7 +161,7 @@ const Users = () => {
       </div>
       <div
         className={classes.AddUser}
-        onClick={() => history.push('/users/create-user')}
+        onClick={() => history.push('/users/create')}
       >
         <button>
           <Add /> Add User

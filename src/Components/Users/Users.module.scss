@@ -6,15 +6,15 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 2em 1em 2em 1em;
+  padding: 2em 1em 1em 1em;
   background-color: $white-grey;
   // background-image: linear-gradient(90deg, #74ebd5da 0%, #57d198d5 100%);
 
   .AddUser {
     position: absolute;
-    top: 9.3%;
+    top: 10%;
     margin: 0.2em 0 0.6em 0;
-    right: 6.8%;
+    right: 5%;
     button {
       display: flex;
       align-items: center;
@@ -23,10 +23,10 @@
       width: 100%;
       cursor: pointer;
       outline: none;
-      padding: 0.6em 0.8em;
+      padding: 0.5em 0.8em;
       border: none;
       border-radius: 0.2em;
-      font-size: 1.1em;
+      font-size: 1.2em;
       font-weight: 500;
       color: #ffff;
       background-color: $primary-color;
@@ -43,8 +43,8 @@
     }
   }
   .UsersList {
-    width: 90%;
-    height: 92%;
+    width: 95%;
+    height: 93%;
     background: #ffff;
     box-shadow: $shadow2;
     border-radius: 0.2em;

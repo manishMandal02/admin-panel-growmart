@@ -41,7 +41,7 @@ const DeleteproductModal = ({ closeModal, product, successDelete }) => {
           severity='error'
           variant='filled'
         >
-          {error.substring(0, 24)}
+          {error.substring(0, 48)}
         </Alert>
       ) : success ? (
         <Alert
@@ -65,9 +65,10 @@ const DeleteproductModal = ({ closeModal, product, successDelete }) => {
         <div className={classes.Message}>
           <span>Are you sure you want to delete this Product?</span>
           <p>
-            <strong>{product.name}</strong> having productId{' '}
-            <strong>{product.id}</strong> will be removed from the database and
-            activities related to this product will be permanently deleted.
+            <strong>{product.name.length > 15
+                      ? `${product.name.substring(0, 20)}...`
+                      : product.name}</strong> having productId{' '}
+            <strong>{product.id}</strong> will be deleted from the database permanently.
           </p>
         </div>
         <div className={classes.ButtonWrapper}>

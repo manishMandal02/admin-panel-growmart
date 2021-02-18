@@ -11,6 +11,10 @@ import {
   GET_PRODUCTSLIST_ERROR,
   GET_PRODUCTSLIST_REQUEST,
   GET_PRODUCTSLIST_SUCCESS,
+  GET_PRODUCT_ERROR,
+  GET_PRODUCT_REQUEST,
+  GET_PRODUCT_RESET,
+  GET_PRODUCT_SUCCESS,
   UPDATE_PRODUCT_FAIL,
   UPDATE_PRODUCT_REQUEST,
   UPDATE_PRODUCT_RESET,
@@ -34,6 +38,29 @@ export const getproductsReducer = (state = { products: [] }, action) => {
         loading: false,
         error: action.payload,
       };
+    default:
+      return state;
+  }
+};
+
+export const getproductByIdReducer = (state = {}, action) => {
+  switch (action.type) {
+    case GET_PRODUCT_REQUEST:
+      return {
+        loading: true,
+      };
+    case GET_PRODUCT_SUCCESS:
+      return {
+        loading: false,
+        product: action.payload,
+      };
+    case GET_PRODUCT_ERROR:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    case GET_PRODUCT_RESET:
+      return {};
     default:
       return state;
   }
@@ -109,6 +136,7 @@ export const createProductReducer = (state = {}, action) => {
 };
 
 export const productsReducer = combineReducers({
+  getProductById: getproductByIdReducer,
   getProducts: getproductsReducer,
   updateProduct: updateProductReducer,
   deleteProduct: deleteProductReducer,

@@ -42,7 +42,7 @@
   font-size: 1.1em;
   font-weight: 500;
   color: #ffff;
-  background-color: #00b5b8;
+  background-color: #2eaf59;
   -webkit-transition: all 0.1s;
   transition: all 0.1s;
 }
@@ -96,7 +96,7 @@
 }
 
 .Container .productsList table thead tr {
-  background-color: #2eaf59;
+  background-color: #328fdb;
   -webkit-box-shadow: #00000026 1.95px 1.95px 2.6px;
           box-shadow: #00000026 1.95px 1.95px 2.6px;
 }
@@ -174,11 +174,11 @@
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
-  background: #40add8;
+  background: #2eaf59;
   color: #ffff;
   outline: none;
   border: none;
-  border: 2px solid #40add8;
+  border: 2px solid #2eaf59;
   border-radius: 0.4em;
   padding: 0.3em 0.5em;
 }

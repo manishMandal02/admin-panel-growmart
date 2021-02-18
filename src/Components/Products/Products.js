@@ -7,6 +7,7 @@ import { Add, Delete, Edit } from '@material-ui/icons';
 
 import classes from './Products.module.scss';
 import { getProducts } from '../../Store/Actions/ProductActions';
+import { GET_PRODUCT_RESET } from "../../Store/Actions/ActionTypes";
 import Modal from '../UI/Modal/Modal';
 import DeleteproductModal from './DeleteProduct/DeleteProduct';
 
@@ -61,10 +62,10 @@ const Products = () => {
                 left: '45%',
                 top: '35%',
               }}
-              size={40}
+              size={60}
             />
           ) : error ? (
-            <Alert severity='error'>{error}</Alert>
+            <Alert severity='error'>{error.substring(0, 80)}</Alert>
           ) : products ? (
             <tbody>
               {products.map((product) => (
@@ -84,9 +85,13 @@ const Products = () => {
                     <div className={classes.ButtonWrapper}>
                       <Tooltip title='Edit product' placement='top' arrow>
                         <button
-                          onClick={() =>
+                          onClick={() => {
+                          dispatch({
+                            type: GET_PRODUCT_RESET,
+                          })
                             history.push(`/products/edit/${product._id}`)
-                          }
+                            
+                          }}
                         >
                           <Edit />
                         </button>
@@ -96,6 +101,7 @@ const Products = () => {
                           onClick={() => {
                             setClickedproduct({
                               id: product._id,
+                              name: product.name,
                             });
                             setShowDeleteModal(true);
                           }}
