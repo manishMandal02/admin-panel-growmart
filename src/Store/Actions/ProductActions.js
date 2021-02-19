@@ -18,12 +18,12 @@ import {
 } from './ActionTypes';
 
 //get all products
-export const getProducts = () => async (dispatch) => {
+export const getProducts = (pageNumber) => async (dispatch) => {
   try {
     dispatch({
       type: GET_PRODUCTSLIST_REQUEST,
     });
-    const { data } = await axios.get('/api/products');
+    const { data } = await axios.get(`/api/products?pageNumber=${pageNumber}`);
 
     dispatch({
       type: GET_PRODUCTSLIST_SUCCESS,

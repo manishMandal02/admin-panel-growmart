@@ -9,31 +9,31 @@
   height: 8%;
   box-shadow: $shadow2;
 
-  .Wrapper {
-    width: 12%;
-    margin-right: 0.8em;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    span {
-      color: #504e4e;
-      padding: 0.2em 0.3em 0.2em 0.3em;
-      border-radius: 0.6em;
-      cursor: pointer;
-      &:hover {
-        box-shadow: $shadow2;
-      }
-      svg {
-        font-size: 1.8em;
-      }
-      span {
-        background-color: $primary-color;
-        color: #ffff;
-        font-size: 1em;
-        font-weight: 600;
-      }
-    }
-  }
+  // .Wrapper {
+  //   width: 12%;
+  //   margin-right: 0.8em;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: space-around;
+  //   span {
+  //     color: #504e4e;
+  //     padding: 0.2em 0.3em 0.2em 0.3em;
+  //     border-radius: 0.6em;
+  //     cursor: pointer;
+  //     &:hover {
+  //       box-shadow: $shadow2;
+  //     }
+  //     svg {
+  //       font-size: 1.8em;
+  //     }
+  //     span {
+  //       background-color: $primary-color;
+  //       color: #ffff;
+  //       font-size: 1em;
+  //       font-weight: 600;
+  //     }
+  //   }
+  // }
   .Profile {
     .LoggedUser {
       display: flex;
@@ -55,7 +55,7 @@
         span {
           svg {
             margin-left: -0.1em;
-            margin-top: 0.28em;
+            margin-top: 0.2em;
             font-size: 1.2em;
           }
         }
@@ -65,9 +65,9 @@
         position: fixed;
         display: none;
         width: 12%;
-        width: 11%;
         max-width: 12%;
-        margin-top: 0.7em;
+        margin-top: .95em;
+        margin-left: -.6em;
         box-shadow: #959da533 0px 8px 24px;
         ul {
           position: absolute;
@@ -89,14 +89,14 @@
             align-items: center;
             max-width: 100%;
             width: 100%;
-            padding: 0.4em 0.8em;
+            padding: 0.4em 0.9em  .4em .6em;
             text-decoration: none;
             color: $dark-grey;
             width: 100%;
-            font-size: 1em;
+            font-size: .92em;
             font-weight: 600;
             svg {
-              font-size: 1.5em;
+              font-size: 1.4em;
               margin-right: 0.2em;
               color: $mid-grey;
             }

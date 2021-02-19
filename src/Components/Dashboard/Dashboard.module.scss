@@ -25,12 +25,12 @@
     justify-content: space-around;
 
     span {
-      height: 40%;
+      height: 80%;
       position: relative;
       cursor: pointer;
       transition: all 0.25s;
       flex-direction: column;
-      border-radius: 0% 0% 8% 8%;
+      border-radius: 0% 0% 8% 2%;
       width: 28%;
       display: flex;
       padding: 1em 1em;
@@ -73,10 +73,10 @@
 
       &:hover {
         box-shadow: $shadow3;
-        border-radius: 2% 2% 50% 50%;
+        border-radius: 1% 1% 100% 2%;
         justify-content: center;
 
-        // transform: translateY(5%);
+        box-shadow: $shadow3;
 
         span {
           box-shadow: none;
@@ -103,10 +103,10 @@
         rgba(255, 143, 87, 1) 44%,
         rgba(255, 198, 170, 0.919502835313813) 100%
       );
-      // border-radius: 5% 5% 0% 100%;
-      // &:hover {
-      //   border-radius: 5% 5% 100% 0%;
-      // }
+      border-radius: 0% 0% 2% 8%;
+      &:hover {
+        border-radius: 1% 1% 2% 100%;
+      }
     }
     > span:nth-child(4) {
       background: rgb(24, 181, 133);
@@ -115,10 +115,10 @@
         rgba(24, 181, 133, 1) 44%,
         rgba(95, 255, 206, 0.9279061966583508) 100%
       );
-      // border-radius: 5% 5% 0% 100%;
-      // &:hover {
-      //   border-radius: 5% 5% 100% 0%;
-      // }
+      border-radius: 0% 0% 2% 8%;
+      &:hover {
+        border-radius: 1% 1% 2% 100%;
+      }
     }
   }
 }

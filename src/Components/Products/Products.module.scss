@@ -63,14 +63,23 @@
           border-bottom: 1px solid $light-grey;
           border-right: 1px solid $light-grey;
         }
-        th:nth-child(6) {
-          font-size: 1.06em;
-        }
+
+        // th:nth-child(6) {
+        //   font-size: 1.06em;
+        // }
         th:nth-child(7) {
-          border-bottom: 1px solid $light-grey;
-          border-right: none;
-          margin: 0;
+          padding: 0;
+          text-align: center;
+          font-size: 1.15em;
+          width: 8em;
         }
+        th:nth-child(8) {
+          padding: 0 0.1em;
+          text-align: center;
+          font-size: 1em;
+          width: 8em;
+        }
+
         tr {
           background-color: #328fdb;
           box-shadow: $shadow2;
@@ -117,9 +126,46 @@
             font-weight: 500;
           }
         }
-        // tr :nth-child(3) {
-        //   text-align: center;
-        // }
+
+        tr :nth-child(2) {
+          width: 15em;
+          max-width: 15em;
+        }
+        tr :nth-child(3) {
+          width: 18%;
+          // max-width: 20em;
+        }
+        tr :nth-child(4) {
+          width: 5em;
+          max-width: 5em;
+          text-align: center;
+        }
+        tr :nth-child(5) {
+          width: 7em;
+          max-width: 7em;
+        }
+        tr :nth-child(6) {
+          width: 8em;
+          max-width: 8em;
+        }
+        tr :nth-child(7) {
+          width: 3em;
+          max-width: 3em;
+          text-align: center;
+        }
+        tr :nth-child(8) {
+          width: 3.6em;
+          max-width: 3.6em;
+        }
+        tr :nth-child(9) {
+          width: 2em;
+          max-width: 3em;
+          text-align: center;
+        }
+        tr :nth-child(10) {
+          width: 7em;
+          max-width: 7em;
+        }
       }
     }
     .Pagination {
@@ -135,6 +181,7 @@
 .ButtonWrapper {
   display: flex;
   padding: 0.2em 0em 0em 0.4em;
+  width: 80%;
   button {
     display: flex;
     cursor: pointer;
@@ -161,8 +208,4 @@
       background-color: #ffff;
     }
   }
-}
-
-.Name {
-  width: 16%;
 }

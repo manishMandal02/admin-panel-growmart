@@ -2,4 +2,301 @@
 
 .Container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 2em 1em 1em 1em;
+  background-color: $white-grey;
+  // background-image: linear-gradient(90deg, #74ebd5da 0%, #57d198d5 100%);
+
+  .Addproduct {
+    position: absolute;
+    top: 10%;
+    margin: 0.2em 0 0.6em 0;
+    right: 4%;
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: $shadow2;
+      width: 100%;
+      cursor: pointer;
+      outline: none;
+      padding: 0.5em 0.6em;
+      border: none;
+      border-radius: 0.2em;
+      font-size: 1.2em;
+      font-weight: 500;
+      color: #ffff;
+      // background-color: $blue-theme;
+      background-color: $green-color;
+      transition: all 0.1s;
+      &:hover {
+        transform: scale(1.02);
+      }
+      svg {
+        font-size: 1.15em;
+        transform: scale(1.5);
+        font-weight: 600;
+        margin-right: 0.2em;
+      }
+    }
+  }
+  .productsList {
+    width: 99%;
+    height: 93%;
+    background: #ffff;
+    box-shadow: $shadow2;
+    border-radius: 0.2em;
+    table {
+      width: 100%;
+      padding-left: 0.8em;
+      border-collapse: collapse;
+      counter-reset: rowNumber;
+      td th {
+        border: 1px solid $light-grey;
+        // border-bottom: 3px solid $light-grey;
+      }
+      thead {
+        th {
+          border-bottom: 1px solid $light-grey;
+          border-right: 1px solid $light-grey;
+        }
+        th:nth-child(6) {
+          font-size: 1.06em;
+        }
+        th:nth-child(7) {
+          border-bottom: 1px solid $light-grey;
+          border-right: none;
+          margin: 0;
+        }
+        tr {
+          background-color: $blue-color;
+          box-shadow: $shadow2;
+          th {
+            color: #ffffff;
+            text-align: left;
+            padding: 0.6em 0.6em;
+            font-size: 1.2em;
+            font-weight: 600;
+          }
+        }
+        tr :nth-child(5) {
+          text-align: center;
+        }
+        tr :nth-child(6) {
+          text-align: center;
+          font-size: 1em;
+        }
+        tr :nth-child(8) {
+          text-align: center;
+          font-size: 0.96em;
+        }
+        tr :nth-child(9) {
+          text-align: center;
+        }
+        tr :nth-child(10) {
+          text-align: center;
+        }
+      }
+
+      tbody {
+        tr:nth-child(n + 1) {
+          counter-increment: rowNumber;
+        }
+        tr:nth-child(n + 1) td:first-child::before {
+          content: counter(rowNumber);
+          min-width: 1em;
+          margin-right: 0.1em;
+        }
+        td {
+          border: 1px solid $light-grey;
+        }
+        > tr:nth-child(odd) {
+          background-color: #f5f5f5;
+          &:hover {
+            background-color: #e7e7e7;
+          }
+        }
+        > tr:nth-child(even) {
+          background-color: #ffffff;
+          &:hover {
+            background-color: #e9e9e9;
+          }
+        }
+
+        tr {
+          border-bottom: 1px solid $light-grey;
+          td {
+            padding: 0.28em;
+            font-size: 1.08em;
+            font-weight: 500;
+          }
+        }
+        tr :nth-child(2) {
+          width: 16em;
+        }
+        tr :nth-child(3) {
+          width: 9em;
+        }
+        tr :nth-child(4) {
+          width: 2em;
+          text-align: center;
+        }
+        tr :nth-child(5) {
+          width: 6em;
+          text-align: center;
+        }
+        tr :nth-child(6) {
+          width: 7.8em;
+          text-align: center;
+        }
+        tr :nth-child(7) {
+          width: 2.8em;
+          text-align: center;
+        }
+        tr :nth-child(8) {
+          width: 3 em;
+          text-align: center;
+        }
+        tr :nth-child(9) {
+          width: 6em;
+          max-width: 10em;
+          text-align: center;
+        }
+        tr :nth-child(10) {
+          width: 6.6em;
+          max-width: 6.6em;
+          text-align: center;
+        }
+      }
+    }
+    .Pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.8em 0em 0.15em 0;
+    }
+  }
+}
+//########
+
+.ButtonWrapper {
+  display: flex;
+  padding: 0.2em 0.1em 0em 0.4em;
+  width: 80%;
+  button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $green-color;
+    color: #ffff;
+    outline: none;
+    border: none;
+    border: 2px solid $green-color;
+    border-radius: 0.4em;
+    padding: 0.36em 0.5em;
+    font-size: 0.9em;
+    svg {
+      font-size: 1.3em;
+      transform: scale(1.3);
+    }
+    &:hover {
+      color: $green-color;
+      border: 2px solid $green-color;
+
+      background-color: #ffff;
+    }
+  }
+
+  > button:nth-child(2) {
+    // width: 40%;
+    margin-left: 1em;
+    background-color: $white-grey;
+    color: $mid-grey;
+    border: 2px solid $mid-grey;
+
+    &:hover {
+      color: $dark-grey;
+      border: 2px solid $dark-grey;
+    }
+  }
+}
+
+.Name {
+  width: 16%;
+}
+
+.ProgressBar {
+  max-width: 90%;
+  height: 0.7em;
+  margin-top: 0.1em;
+  background-color: $light-grey;
+  border-radius: 2em;
+  > div {
+    height: 0.7em;
+    border-radius: 2em;
+    background-color: #66d1ad;
+  }
+}
+.PaymentPending {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1em 0;
+  p {
+    font-size: 0.72em;
+    background-color: #fcff68;
+    // color: #ffffff;
+    color: #a7a7a7;
+    font-weight: 600;
+    width: 80%;
+    border-radius: 1em;
+    padding: 0.3em 0.4em;
+    margin: 0;
+    margin-bottom: 0.36em;
+  }
+}
+
+.OrderProcessing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1em 0;
+
+  p {
+    font-size: 0.72em;
+    background-color: $orange-color;
+    color: #ffffff;
+    font-weight: 600;
+    width: 80%;
+    border-radius: 1em;
+    padding: 0.3em 0.4em;
+    margin: 0;
+    margin-bottom: 0.36em;
+  }
+}
+
+.OrderCompleted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1em 0;
+
+  p {
+    font-size: 0.72em;
+    background-color: $green-color;
+    color: #ffffff;
+    font-weight: 600;
+    width: 80%;
+    border-radius: 1em;
+    padding: 0.3em 0.4em;
+    margin: 0;
+    margin-bottom: 0.36em;
+  }
 }

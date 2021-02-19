@@ -31,7 +31,9 @@ export const getproductsReducer = (state = { products: [] }, action) => {
     case GET_PRODUCTSLIST_SUCCESS:
       return {
         loading: false,
-        products: action.payload,
+        products: action.payload.products,
+        page: action.payload.page,
+        pages: action.payload.pages,
       };
     case GET_PRODUCTSLIST_ERROR:
       return {

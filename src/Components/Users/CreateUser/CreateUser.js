@@ -17,6 +17,7 @@ import { createUserAction } from '../../../Store/Actions/UserActions';
 import { CREATE_USER_RESET } from '../../../Store/Actions/ActionTypes';
 
 import classes from './CreateUser.module.scss';
+import { Helmet } from 'react-helmet';
 
 const CreateUser = ({ history }) => {
   //initialize
@@ -57,6 +58,9 @@ const CreateUser = ({ history }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Add User | GrowMart Admin</title>
+      </Helmet>
       <div className={classes.GoBack} onClick={() => history.push('/users')}>
         <button>
           <ArrowBack /> Go Back

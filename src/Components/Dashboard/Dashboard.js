@@ -8,11 +8,15 @@ import {
 } from '@material-ui/icons';
 
 import classes from './Dashboard.module.scss';
+import { Helmet } from 'react-helmet';
 
 const Dashboard = () => {
   const history = useHistory();
   return (
     <div className={classes.Dashboard}>
+      <Helmet>
+        <title>Dashboard | GrowMart Admin</title>
+      </Helmet>
       <div className={classes.Bar}></div>
       <div className={classes.Wrapper}>
         <span onClick={() => history.push('/products')}>

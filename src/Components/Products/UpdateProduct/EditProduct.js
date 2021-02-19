@@ -9,12 +9,10 @@ import {
   updateProductAction,
   getProductById,
 } from '../../../Store/Actions/ProductActions';
-import {
-  UPDATE_PRODUCT_RESET,
-  
-} from '../../../Store/Actions/ActionTypes';
+import { UPDATE_PRODUCT_RESET } from '../../../Store/Actions/ActionTypes';
 
 import classes from './EditProduct.module.scss';
+import { Helmet } from 'react-helmet';
 
 const CreateProduct = ({ history, match }) => {
   //initialize
@@ -52,20 +50,18 @@ const CreateProduct = ({ history, match }) => {
   // }
 
   useEffect(() => {
-    if(!product  || product._id !== id) {
-    dispatch(getProductById(id));
-    }else{
-      setName(product.name)
-      setDescription(product.description)
-      setPrice(product.price)
-      setCountInStock(product.countInStock)
-      setBrand(product.brand)
-      setCategory(product.category)
-      setPreviewImage(product.image)
+    if (!product || product._id !== id) {
+      dispatch(getProductById(id));
+    } else {
+      setName(product.name);
+      setDescription(product.description);
+      setPrice(product.price);
+      setCountInStock(product.countInStock);
+      setBrand(product.brand);
+      setCategory(product.category);
+      setPreviewImage(product.image);
     }
   }, [id, history, dispatch, product]);
-
-
 
   if (success) {
     setTimeout(() => {
@@ -101,17 +97,26 @@ const CreateProduct = ({ history, match }) => {
 
   //handel product create
   const handelProductCreate = async () => {
-    if(name !== product.name || description !== product.description || price !== product.price || countInStock !== product.countInStock || brand !== product.brand || category !== product.category || previewImage !== product.image){
+    if (
+      name !== product.name ||
+      description !== product.description ||
+      price !== product.price ||
+      countInStock !== product.countInStock ||
+      brand !== product.brand ||
+      category !== product.category ||
+      previewImage !== product.image
+    ) {
       dispatch(
-      updateProductAction(id, {
-        name,
-        description,
-        price,
-        countInStock,
-        brand,
-        category,
-        imageInput,
-      }))
+        updateProductAction(id, {
+          name,
+          description,
+          price,
+          countInStock,
+          brand,
+          category,
+          imageInput,
+        })
+      );
     }
 
     if (error) {
@@ -130,7 +135,15 @@ const CreateProduct = ({ history, match }) => {
     <Alert severity='error'>{productError.substring(0, 80)}</Alert>
   ) : product ? (
     <>
-      <div className={classes.GoBack} onClick={() => {history.push('/products'); }}>
+      <Helmet>
+        <title>Edit Product | GrowMart Admin</title>
+      </Helmet>
+      <div
+        className={classes.GoBack}
+        onClick={() => {
+          history.push('/products');
+        }}
+      >
         <button>
           <ArrowBack /> Go Back
         </button>
@@ -239,11 +252,12 @@ const CreateProduct = ({ history, match }) => {
 
             <p>Category </p>
             <select
-            value={category}
+              value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
               <option value='vegetables'>Vegetables</option>
               <option value='fruits'>Fruits</option>
+              <option value='leafyVegetables'>Leafy Vegetables</option>
             </select>
           </div>
           <div className={classes.RightContainer}>
@@ -256,7 +270,7 @@ const CreateProduct = ({ history, match }) => {
                     </span>
                     Upload Image to Preview
                   </p>
-                ) :  (
+                ) : (
                   <img src={previewImage} alt='preview' />
                 )}
               </div>

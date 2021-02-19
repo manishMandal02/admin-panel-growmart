@@ -27,7 +27,6 @@ const EditUser = ({ show, closeModal, user, successUpdate }) => {
       closeModal();
     }, 2000);
   }
-  // console.log(isAdmin);
   //update user handler
   const updateUserHandler = (e) => {
     e.preventDefault();

@@ -12,6 +12,8 @@ import {
   Settings,
   CameraAlt,
   LocalMall,
+  AddPhotoAlternate,
+  PersonAdd,
 } from '@material-ui/icons/';
 
 import classes from './Header.module.scss';
@@ -48,14 +50,14 @@ const Header = () => {
 
   return (
     <div className={classes.Header}>
-      <div className={classes.Wrapper}>
-        <Badge badgeContent={4} color='primary' overlap='circle'>
+      {/* <div className={classes.Wrapper}>
+        <Badge badgeContent={0} color='primary' overlap='circle'>
           <NotificationsNone />
         </Badge>
-        <Badge badgeContent={4} color='primary' overlap='circle'>
+        <Badge badgeContent={0} color='primary' overlap='circle'>
           <MailOutline />
         </Badge>
-      </div>
+      </div> */}
 
       <div className={classes.Profile}>
         {!adminInfo ? null : (
@@ -77,9 +79,17 @@ const Header = () => {
                   <AccountBox />
                   Users
                 </Link>
+                <Link to='/users/create'>
+                  <PersonAdd />
+                  Add User
+                </Link>
                 <Link to='/products'>
                   <CameraAlt />
                   Products
+                </Link>
+                 <Link to='/products/create'>
+                  <AddPhotoAlternate />
+                  Add Product
                 </Link>
                 <Link to='/orders'>
                   <LocalMall />

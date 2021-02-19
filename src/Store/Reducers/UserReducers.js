@@ -56,7 +56,9 @@ const getUsersReducer = (state = { users: [] }, action) => {
     case GET_USERS_SUCCESS:
       return {
         loading: false,
-        users: action.payload,
+        users: action.payload.users,
+        page: action.payload.page,
+        pages: action.payload.pages
       };
     case GET_USERS_FAIL:
       return {

@@ -9,6 +9,7 @@ import { createProductAction } from '../../../Store/Actions/ProductActions';
 import { CREATE_PRODUCT_RESET } from '../../../Store/Actions/ActionTypes';
 
 import classes from './CreateProduct.module.scss';
+import { Helmet } from 'react-helmet';
 
 const CreateProduct = ({ history }) => {
   //initialize
@@ -87,6 +88,9 @@ const CreateProduct = ({ history }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Add Product | GrowMart Admin</title>
+      </Helmet>
       <div className={classes.GoBack} onClick={() => history.push('/products')}>
         <button>
           <ArrowBack /> Go Back
@@ -201,6 +205,8 @@ const CreateProduct = ({ history }) => {
             >
               <option value='vegetables'>Vegetables</option>
               <option value='fruits'>Fruits</option>
+              <option value='leafyVegetables'>Leafy Vegetables</option>
+              {/* <option value='fruits'>Fruits</option> */}
             </select>
           </div>
           <div className={classes.RightContainer}>

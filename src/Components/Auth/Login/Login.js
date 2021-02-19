@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import classes from './Login.module.scss';
 import { adminLogin, adminLogout } from '../../../Store/Actions/UserActions';
+import { Helmet } from 'react-helmet';
 //###/ActionTypes##
 const Login = () => {
   //state
@@ -52,6 +53,9 @@ const Login = () => {
 
   return (
     <div className={classes.Container} id='login-container'>
+      <Helmet>
+        <title>Login | GrowMart Admin</title>
+      </Helmet>
       <div className={classes.LoginForm}>
         <div className={classes.Logo}>
           <Storefront />

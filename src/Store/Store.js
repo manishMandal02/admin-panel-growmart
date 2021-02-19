@@ -4,10 +4,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { usersReducer } from './Reducers/UserReducers';
 import { productsReducer } from './Reducers/ProductReducers';
+import { OrderReducer } from './Reducers/OrderReducer';
 
 const reducer = combineReducers({
   user: usersReducer,
   product: productsReducer,
+  order: OrderReducer,
 });
 
 const adminInfoFromStorage = localStorage.getItem('adminInfo')

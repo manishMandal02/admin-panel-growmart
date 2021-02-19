@@ -10,12 +10,15 @@ import { getUsersAction } from '../../Store/Actions/UserActions';
 import EditUser from './EditUser/EditUser';
 import Modal from '../UI/Modal/Modal';
 import DeleteUserModal from './DeleteUserModal/DeleteUserModal';
+import { Helmet } from 'react-helmet';
 
 //#######
-const Users = () => {
+const Users = ({ match }) => {
   //initialize
   const dispatch = useDispatch();
   const history = useHistory();
+
+  const pageNumber = match.params.pageNumber || 1;
 
   //state
   const [showEditModal, setShowEditModal] = useState(false);
@@ -30,20 +33,32 @@ const Users = () => {
     createdAt: '',
     isAdmin: false,
   });
+  //change page
+  //  const [page, setPage] = React.useState(1);
+  const handlePageChange = (event, value) => {
+    // console.log(event)
+    history.push(`/users/page/${value}`);
+  };
 
   const { adminInfo } = useSelector((state) => state.user.admin);
 
-  const { users, loading, error } = useSelector((state) => state.user.getUsers);
+  const { users, loading, error, pages, page } = useSelector(
+    (state) => state.user.getUsers
+  );
 
   useEffect(() => {
     if (!adminInfo) {
       history.push('/');
     }
-    dispatch(getUsersAction());
-  }, [dispatch, adminInfo, history, successUpdate, successDelete]);
+
+    dispatch(getUsersAction(pageNumber));
+  }, [dispatch, adminInfo, history, successUpdate, successDelete, pageNumber]);
 
   return (
     <div className={classes.Container}>
+      <Helmet>
+        <title> Users | GrowMart Admin</title>
+      </Helmet>
       <div className={classes.UsersList}>
         <table>
           <thead>
@@ -144,6 +159,7 @@ const Users = () => {
         >
           <DeleteUserModal
             show={showDeleteModal}
+            // history={history}
             closeModal={() => setShowDeleteModal(false)}
             user={clickedUser}
             successDelete={() => setSuccessDelete(successDelete ? false : true)}
@@ -151,11 +167,14 @@ const Users = () => {
         </Modal>
         <div className={classes.Pagination}>
           <Pagination
-            count={10}
             color='primary'
             variant='outlined'
             shape='rounded'
             size='large'
+            boundryCount={1}
+            page={page}
+            count={pages}
+            onChange={handlePageChange}
           />
         </div>
       </div>

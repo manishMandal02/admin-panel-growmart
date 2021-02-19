@@ -63,7 +63,7 @@ export const adminLogout = () => async (dispatch) => {
 };
 
 //GET all users
-export const getUsersAction = () => async (dispatch, getState) => {
+export const getUsersAction = (pageNumber) => async (dispatch, getState) => {
   try {
     dispatch({
       type: GET_USERS_REQUEST,
@@ -81,7 +81,7 @@ export const getUsersAction = () => async (dispatch, getState) => {
     };
 
     const { data } = await axios.get(
-      '/api/users',
+      `/api/users?pageNumber=${pageNumber}`,
 
       config
     );

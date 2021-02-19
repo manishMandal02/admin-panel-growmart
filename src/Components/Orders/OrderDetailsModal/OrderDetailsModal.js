@@ -4,30 +4,27 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Close } from '@material-ui/icons';
 import { Alert } from '@material-ui/lab';
 
-import classes from './DeleteUserModal.module.scss';
+import classes from './OrderDetailsModal.module.scss';
 import { deleteUserAction } from '../../../Store/Actions/UserActions';
-import { DELETE_USER_RESET } from '../../../Store/Actions/ActionTypes';
 import { CircularProgress } from '@material-ui/core';
 
 //######
-const DeleteUserModal = ({ closeModal, user, successDelete, history }) => {
+const OrderDetailsModal = ({ closeModal, history }) => {
   //initialize
   const dispatch = useDispatch();
 
-  const { loading, error, success } = useSelector(
-    (state) => state.user.deleteUser
+  const { loading, error, orderDetails } = useSelector(
+    (state) => state.order.orderDetails
   );
 
-  if (success) {
-    setTimeout(() => {
-      dispatch({
-        type: DELETE_USER_RESET,
-      });
-      successDelete();
-      closeModal();
- 
-    }, 2000);
-  }
+  //   if (success) {
+  //     setTimeout(() => {
+  //       dispatch({
+  //         type: DELETE_USER_RESET,
+  //       });
+  //       closeModal();
+  //     }, 2000);
+  //   }
 
   return (
     <>
@@ -44,7 +41,7 @@ const DeleteUserModal = ({ closeModal, user, successDelete, history }) => {
         >
           {error.substring(0, 24)}
         </Alert>
-      ) : success ? (
+      ) : orderDetails ? (
         <Alert
           style={{
             margin: '0 0.6em ',
@@ -66,16 +63,16 @@ const DeleteUserModal = ({ closeModal, user, successDelete, history }) => {
         <div className={classes.Message}>
           <span>Are you sure you want to delete this User?</span>
           <p>
-            <strong>{user.name}</strong> having UserId{' '}
-            <strong>{user.id}</strong> will be removed from the database and
-            activities related to this user will be permanently deleted.
+            <strong>{}</strong> having UserId <strong>{}</strong> will be
+            removed from the database and activities related to this user will
+            be permanently deleted.
           </p>
         </div>
         <div className={classes.ButtonWrapper}>
           <button className={classes.CancelButton} onClick={closeModal}>
             Cancel
           </button>
-          <button onClick={() => dispatch(deleteUserAction(user.id))}>
+          <button onClick={() => dispatch(deleteUserAction())}>
             {loading ? (
               <CircularProgress color='white' size={24} thickness={5} />
             ) : (
@@ -88,4 +85,4 @@ const DeleteUserModal = ({ closeModal, user, successDelete, history }) => {
   );
 };
 
-export default DeleteUserModal;
+export default OrderDetailsModal;
