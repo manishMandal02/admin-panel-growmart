@@ -248,6 +248,7 @@ const CreateProduct = ({ history, match }) => {
             <select value={brand} onChange={(e) => setBrand(e.target.value)}>
               <option value='growmart'>GrowMart</option>
               <option value='nestle'>Nestle</option>
+              <option value='marketside'>MarketSide</option>
             </select>
 
             <p>Category </p>
@@ -258,6 +259,7 @@ const CreateProduct = ({ history, match }) => {
               <option value='vegetables'>Vegetables</option>
               <option value='fruits'>Fruits</option>
               <option value='leafyVegetables'>Leafy Vegetables</option>
+              <option value='freshprepared'>Fresh Prepared</option>
             </select>
           </div>
           <div className={classes.RightContainer}>

@@ -1,6 +1,6 @@
 {
-  "short_name": "Gorw Mart Admin",
-  "name": "Gorw Mart Admin",
+  "short_name": "GorwMart Admin",
+  "name": "GorwMart Admin",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#328fdb",
   "background_color": "#ffffff"
 }

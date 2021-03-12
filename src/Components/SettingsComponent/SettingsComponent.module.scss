@@ -1,0 +1,151 @@
+@import '../../App.scss';
+
+.Container {
+  display: flex;
+  padding: 3em 1em 3em 6em;
+  justify-content: flex-start;
+  background-color: $white-grey;
+  height: 90%;
+  width: 100%;
+  .LeftContainer {
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    .WelcomeCard {
+      border-radius: 0.2em;
+      background-color: #ffff;
+      padding: 0.6em 0.8em;
+      display: flex;
+      align-items: center;
+
+      box-shadow: $shadow2;
+
+      > svg {
+        font-size: 3.6em;
+        color: $primary-color;
+      }
+      > span {
+        margin: 0.4em 0 0 0;
+        > p:nth-child(1) {
+          font-size: 1em;
+          margin: 0;
+          margin-bottom: -0.2em;
+        }
+        > p:nth-child(2) {
+          font-size: 1.3em;
+          font-weight: 600;
+          margin: 0;
+        }
+      }
+    }
+    .SideMenu {
+      box-shadow: $shadow2;
+      margin-top: 0.8em;
+      background-color: #ffff;
+      display: flex;
+      flex-direction: column;
+      border-radius: 0.2em;
+
+      a {
+        display: flex;
+        align-items: center;
+        padding: 0.8em 0.6em;
+        text-decoration: none;
+        color: $dark-grey;
+        font-size: 1.26em;
+        font-weight: 600;
+        outline: none;
+        svg {
+          font-size: 1.7em;
+          color: $primary-color;
+          margin-right: 0.2em;
+        }
+        &:hover {
+          background-color: #f8f8f8;
+        }
+        &:focus {
+          background-color: #f8f8f8;
+        }
+      }
+    }
+  }
+
+  .RightContainer {
+    margin-left: 1em;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 60%;
+    height: 85%;
+    background-color: #ffff;
+    box-shadow: $shadow2;
+    border-radius: 0.2em;
+    .AccoutTab {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      > p:nth-child(1) {
+        text-align: center;
+        font-size: 1.6em;
+        font-weight: 700;
+        margin: 0;
+        padding: 0.6em 0;
+        word-spacing: 0.1em;
+        letter-spacing: 0.02em;
+        background-color: $primary-color;
+        color: #ffff;
+        border-bottom: 2px solid $light-grey;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        padding-left: 1.6em;
+        margin-bottom: 4em;
+        p {
+          margin: 0.8em 0 0.3em 0;
+          font-size: 1.2em;
+          font-weight: 600;
+        }
+        input {
+          font-size: 1em;
+          padding: 0.6em 0.6em;
+          outline: none;
+          width: 90%;
+          border: 1px solid $light-grey;
+          &:disabled {
+            cursor: not-allowed;
+            background-color: $white-grey;
+          }
+        }
+        button {
+          width: 50%;
+          margin: 1.6em 0 0.4em 0;
+          cursor: pointer;
+          outline: none;
+          padding: 0.8em 1.2em;
+          border: none;
+          border-radius: 0.2em;
+          font-size: 1em;
+          font-weight: 600;
+          color: #ffff;
+          background-color: #1cc576;
+          &:hover {
+            transform: scale(1.02);
+          }
+        }
+        .UpdateProfileButton {
+          background-color: $blue-color;
+        }
+      }
+    }
+  }
+}
+
+.active {
+  a {
+    background-color: #f8f8f8;
+  }
+}

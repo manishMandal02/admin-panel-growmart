@@ -5,6 +5,7 @@ import { Alert, Pagination } from '@material-ui/lab';
 import { Add, Delete, Edit } from '@material-ui/icons';
 import { Helmet } from 'react-helmet';
 
+import { useWindowSize } from '../../Hooks/useWindowSize/useWindowSize';
 import classes from './Products.module.scss';
 import { getProducts } from '../../Store/Actions/ProductActions';
 import { GET_PRODUCT_RESET } from '../../Store/Actions/ActionTypes';
@@ -16,6 +17,8 @@ const Products = ({ history, match }) => {
   //initialize
   const dispatch = useDispatch();
   // const history = useHistory();
+
+  const [width] = useWindowSize();
 
   const pageNumber = match.params.pageNumber || 1;
 
@@ -156,9 +159,11 @@ const Products = ({ history, match }) => {
         className={classes.Addproduct}
         onClick={() => history.push('/products/create')}
       >
-        <button>
-          <Add /> Add product
-        </button>
+        <Tooltip title='Add Product' placement='left'>
+          <button>
+            <Add /> {width > 900 && 'Add product'}
+          </button>
+        </Tooltip>
       </div>
     </div>
   );

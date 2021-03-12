@@ -23,7 +23,9 @@ export const getProducts = (pageNumber) => async (dispatch) => {
     dispatch({
       type: GET_PRODUCTSLIST_REQUEST,
     });
-    const { data } = await axios.get(`/api/products?pageNumber=${pageNumber}`);
+    const { data } = await axios.get(
+      `/api/products/admin/?pageNumber=${pageNumber}`
+    );
 
     dispatch({
       type: GET_PRODUCTSLIST_SUCCESS,
@@ -63,9 +65,11 @@ export const getProductById = (id) => async (dispatch) => {
 };
 
 //Update product
-export const updateProductAction = (id, { name,description,price,countInStock,brand,category,imageInput, }) => async (dispatch,getState) => {
+export const updateProductAction = (
+  id,
+  { name, description, price, countInStock, brand, category, imageInput }
+) => async (dispatch, getState) => {
   try {
-       
     dispatch({
       type: UPDATE_PRODUCT_REQUEST,
     });
@@ -73,17 +77,17 @@ export const updateProductAction = (id, { name,description,price,countInStock,br
       throw new Error('Fill all the required feilds');
     }
     let updatedImage, updatedImageId;
-     if (imageInput) {
-        const {
-      data: { image, imageId },
-    } = await axios.post(`/api/products/image/update/${id}`, imageInput , {
-      headers: { 'Content-type': 'application/form-data' },
-    });
-    // console.log(image, imageId)
-    updatedImage = image;
-    updatedImageId= imageId;
+    if (imageInput) {
+      const {
+        data: { image, imageId },
+      } = await axios.post(`/api/products/image/update/${id}`, imageInput, {
+        headers: { 'Content-type': 'application/form-data' },
+      });
+      // console.log(image, imageId)
+      updatedImage = image;
+      updatedImageId = imageId;
     }
-   
+
     // dispatch({
     //   type: UPDATE_PRODUCT_REQUEST,
     // });
@@ -102,16 +106,20 @@ export const updateProductAction = (id, { name,description,price,countInStock,br
     //     updatedImage,
     //     updatedImageId, )
 
-    await axios.post(`/api/products/${id}`, {   
+    await axios.post(
+      `/api/products/${id}`,
+      {
         name,
         description,
         price,
         countInStock,
         brand,
-        category, 
+        category,
         updatedImage,
-        updatedImageId
-        }, config);
+        updatedImageId,
+      },
+      config
+    );
     dispatch({
       type: UPDATE_PRODUCT_SUCCESS,
     });

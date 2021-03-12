@@ -8,6 +8,10 @@ import {
   UPDATE_ORDER_SUCCESS,
   UPDATE_ORDER_FAIL,
   UPDATE_ORDER_RESET,
+  GET_ORDER_RESET,
+  GET_ORDER_ERROR,
+  GET_ORDER_REQUEST,
+  GET_ORDER_SUCCESS,
 } from '../Actions/ActionTypes';
 
 export const getordersReducer = (state = { orders: [] }, action) => {
@@ -29,6 +33,29 @@ export const getordersReducer = (state = { orders: [] }, action) => {
         loading: false,
         error: action.payload,
       };
+    default:
+      return state;
+  }
+};
+
+export const getorderByIdReducer = (state = {}, action) => {
+  switch (action.type) {
+    case GET_ORDER_REQUEST:
+      return {
+        loading: true,
+      };
+    case GET_ORDER_SUCCESS:
+      return {
+        loading: false,
+        orderDetails: action.payload,
+      };
+    case GET_ORDER_ERROR:
+      return {
+        loading: false,
+        error: action.payload,
+      };
+    case GET_ORDER_RESET:
+      return {};
     default:
       return state;
   }
@@ -60,4 +87,5 @@ export const updateOrderReducer = (state = {}, action) => {
 export const OrderReducer = combineReducers({
   getOrders: getordersReducer,
   updateOrder: updateOrderReducer,
+  orderDetails: getorderByIdReducer,
 });

@@ -16,6 +16,9 @@ import {
   CREATE_USER_FAIL,
   CREATE_USER_REQUEST,
   CREATE_USER_SUCCESS,
+  ADMIN_UPDATE_REQUEST,
+  ADMIN_UPDATE_SUCCESS,
+  ADMIN_UPDATE_FAIL,
 } from '../Actions/ActionTypes';
 
 //Admin Login Action
@@ -60,6 +63,49 @@ export const adminLogout = () => async (dispatch) => {
     type: ADMIN_LOGOUT,
   });
   await localStorage.removeItem('adminInfo');
+};
+
+//Admin Login Action
+export const adminUpdateAction = ({ name, email, password }) => async (
+  dispatch,
+  getState
+) => {
+  try {
+    dispatch({
+      type: ADMIN_UPDATE_REQUEST,
+    });
+
+    const {
+      user: { admin },
+    } = getState();
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${admin.adminInfo.token}`,
+      },
+    };
+
+    const { data } = await axios.put(
+      '/api/users/profile',
+      { name, email, password },
+      config
+    );
+
+    console.log(data);
+    dispatch({
+      type: ADMIN_UPDATE_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: ADMIN_UPDATE_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
 };
 
 //GET all users

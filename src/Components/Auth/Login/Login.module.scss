@@ -161,3 +161,36 @@
     }
   }
 }
+
+.Footer {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 1%;
+  font-size: 1.2em;
+  color: #ffff;
+  left: 40%;
+  font-weight: 500;
+  > svg {
+    color: #ff2994;
+    margin-right: 0.2em;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .Container {
+    .LoginForm {
+      width: 80%;
+      right: 2%;
+      height: 45%;
+      justify-content: center;
+      > form {
+        height: 50%;
+      }
+    }
+  }
+  .Footer {
+    left: 19%;
+    font-size: 1.3em;
+  }
+}

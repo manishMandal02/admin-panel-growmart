@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Badge } from '@material-ui/core/';
 import {
-  NotificationsNone,
-  MailOutline,
-  AccountCircle,
   ExpandMore,
   ExitToApp,
   AccountBox,
@@ -14,17 +10,22 @@ import {
   LocalMall,
   AddPhotoAlternate,
   PersonAdd,
+  Menu,
+  Person,
 } from '@material-ui/icons/';
 
+import { useWindowSize } from '../../Hooks/useWindowSize/useWindowSize';
 import classes from './Header.module.scss';
 import Backdrop from '../UI/Backdrop';
 import { adminLogout } from '../../Store/Actions/UserActions';
+import SideMenuMobile from '../SideMenuMobile/SideMenuMobile';
 
 //######
 const Header = () => {
   //state
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const [width] = useWindowSize();
   //initialize
   const dispatch = useDispatch();
   const history = useHistory();
@@ -58,16 +59,33 @@ const Header = () => {
           <MailOutline />
         </Badge>
       </div> */}
-
+      {width <= 900 && (
+        <div className={classes.LeftContainer}>
+          <SideMenuMobile open={menuOpen} close={() => setMenuOpen(false)} />
+          <Menu
+            onClick={() => {
+              console.log('clicked');
+              setMenuOpen(true);
+            }}
+          />
+        </div>
+      )}
       <div className={classes.Profile}>
         {!adminInfo ? null : (
-          <div className={classes.LoggedUser} onClick={(e) => handleMenuOpen()}>
-            <AccountCircle />
+          <div
+            className={classes.LoggedUser}
+            onClick={() => {
+              width > 900 ? handleMenuOpen() : history.push('/settings');
+            }}
+          >
+            <Person />
             <p>
               {adminInfo.name.split(' ')[0]}{' '}
-              <span>
-                <ExpandMore />
-              </span>
+              {width > 900 && (
+                <span>
+                  <ExpandMore />
+                </span>
+              )}
             </p>
             <Backdrop
               show={menuOpen}
@@ -87,7 +105,7 @@ const Header = () => {
                   <CameraAlt />
                   Products
                 </Link>
-                 <Link to='/products/create'>
+                <Link to='/products/create'>
                   <AddPhotoAlternate />
                   Add Product
                 </Link>
@@ -95,7 +113,7 @@ const Header = () => {
                   <LocalMall />
                   Orders
                 </Link>
-                <Link to='/my/account'>
+                <Link to='/settings'>
                   <Settings /> Settings
                 </Link>
                 <Link to='#' onClick={() => dispatch(adminLogout())}>

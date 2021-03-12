@@ -182,9 +182,11 @@ const Users = ({ match }) => {
         className={classes.AddUser}
         onClick={() => history.push('/users/create')}
       >
-        <button>
-          <Add /> Add User
-        </button>
+        <Tooltip title='Add User' placement='left'>
+          <button>
+            <Add />
+          </button>
+        </Tooltip>
       </div>
     </div>
   );

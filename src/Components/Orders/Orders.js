@@ -57,7 +57,7 @@ const Order = ({ history, match }) => {
               <th>Ordered By</th>
               <th>Items</th>
               <th>Total</th>
-              <th>Order Date</th>
+              <th>Date</th>
               <th>Paid</th>
               <th>Delivered</th>
               <th>Status</th>
@@ -169,7 +169,7 @@ const Order = ({ history, match }) => {
           <OrderDetailsModal
             show={showOrderModal}
             closeModal={() => setShowOrderModal(false)}
-            product={clickedOrder}
+            order={clickedOrder}
           />
         </Modal>
         <Modal

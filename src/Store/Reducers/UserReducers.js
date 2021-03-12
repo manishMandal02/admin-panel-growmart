@@ -19,6 +19,10 @@ import {
   DELETE_USER_SUCCESS,
   DELETE_USER_FAIL,
   DELETE_USER_RESET,
+  ADMIN_UPDATE_REQUEST,
+  ADMIN_UPDATE_SUCCESS,
+  ADMIN_UPDATE_FAIL,
+  ADMIN_UPDATE_RESET,
 } from '../Actions/ActionTypes';
 
 const adminLogin = (state = {}, action) => {
@@ -47,6 +51,33 @@ const adminLogin = (state = {}, action) => {
   }
 };
 
+const adminUpdateReducer = (state = {}, action) => {
+  switch (action.type) {
+    case ADMIN_UPDATE_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case ADMIN_UPDATE_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        success: true,
+        adminUpdate: action.payload,
+      };
+    case ADMIN_UPDATE_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    case ADMIN_UPDATE_RESET:
+      return {};
+    default:
+      return state;
+  }
+};
+
 const getUsersReducer = (state = { users: [] }, action) => {
   switch (action.type) {
     case GET_USERS_REQUEST:
@@ -58,7 +89,7 @@ const getUsersReducer = (state = { users: [] }, action) => {
         loading: false,
         users: action.payload.users,
         page: action.payload.page,
-        pages: action.payload.pages
+        pages: action.payload.pages,
       };
     case GET_USERS_FAIL:
       return {
@@ -148,4 +179,5 @@ export const usersReducer = combineReducers({
   updateUser: updateuserReducer,
   createUser: createUserReducer,
   deleteUser: deleteeUserReducer,
+  adminUpdate: adminUpdateReducer,
 });

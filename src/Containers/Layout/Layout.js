@@ -12,6 +12,7 @@ import Login from '../../Components/Auth/Login/Login';
 import CreateUser from '../../Components/Users/CreateUser/CreateUser';
 import EditProdct from '../../Components/Products/UpdateProduct/EditProduct';
 import CreateProdct from '../../Components/Products/CreateProduct/CreateProduct';
+import SettingsComponent from '../../Components/SettingsComponent/SettingsComponent';
 
 const Layout = () => {
   return (
@@ -26,8 +27,13 @@ const Layout = () => {
             <Route path='/products/create/' component={CreateProdct} exact />
             <Route path='/users/page/:pageNumber?' component={Users} exacts />
             <Route path='/users/' component={Users} exact />
-            <Route path='/products/page/:pageNumber?' component={Products} exact />
+            <Route
+              path='/products/page/:pageNumber?'
+              component={Products}
+              exact
+            />
             <Route path='/products/' component={Products} exact />
+            <Route path='/settings/' component={SettingsComponent} exact />
             <Route path='/dashboard' component={Dashboard} />
             <Route path='/orders' component={Orders} />
             <Route path='/' component={Login} exact />

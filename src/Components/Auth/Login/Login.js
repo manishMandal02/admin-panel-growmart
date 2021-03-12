@@ -7,7 +7,12 @@ import {
   InputLabel,
   TextField,
 } from '@material-ui/core';
-import { Storefront, Visibility, VisibilityOff } from '@material-ui/icons';
+import {
+  Favorite,
+  Storefront,
+  Visibility,
+  VisibilityOff,
+} from '@material-ui/icons';
 import { Alert } from '@material-ui/lab';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -128,7 +133,10 @@ const Login = () => {
           </button>
         </form>
       </div>
-      <div></div>
+      <div className={classes.Footer}>
+        {' '}
+        <Favorite /> Manish Mandal © 2021
+      </div>
     </div>
   );
 };

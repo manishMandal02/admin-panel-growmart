@@ -1,18 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useLocation } from 'react-router-dom';
 
-import {
-  CircularProgress,
-  FormControl,
-  IconButton,
-  Input,
-  InputAdornment,
-  InputLabel,
-} from '@material-ui/core';
+import { CircularProgress } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
-import { ArrowBack, Visibility, VisibilityOff } from '@material-ui/icons';
+import { ArrowBack } from '@material-ui/icons';
 import { createUserAction } from '../../../Store/Actions/UserActions';
 import { CREATE_USER_RESET } from '../../../Store/Actions/ActionTypes';
 

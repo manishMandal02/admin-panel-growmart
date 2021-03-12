@@ -20,7 +20,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1em 0 0 0;
+      padding: 0em 0 0 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .Layout {
+    .Container {
+      width: 100%;
     }
   }
 }

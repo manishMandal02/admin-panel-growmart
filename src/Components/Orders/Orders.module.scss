@@ -10,39 +10,6 @@
   background-color: $white-grey;
   // background-image: linear-gradient(90deg, #74ebd5da 0%, #57d198d5 100%);
 
-  .Addproduct {
-    position: absolute;
-    top: 10%;
-    margin: 0.2em 0 0.6em 0;
-    right: 4%;
-    button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: $shadow2;
-      width: 100%;
-      cursor: pointer;
-      outline: none;
-      padding: 0.5em 0.6em;
-      border: none;
-      border-radius: 0.2em;
-      font-size: 1.2em;
-      font-weight: 500;
-      color: #ffff;
-      // background-color: $blue-theme;
-      background-color: $green-color;
-      transition: all 0.1s;
-      &:hover {
-        transform: scale(1.02);
-      }
-      svg {
-        font-size: 1.15em;
-        transform: scale(1.5);
-        font-weight: 600;
-        margin-right: 0.2em;
-      }
-    }
-  }
   .productsList {
     width: 99%;
     height: 93%;
@@ -87,7 +54,7 @@
         }
         tr :nth-child(6) {
           text-align: center;
-          font-size: 1em;
+          font-size: 0.9em;
         }
         tr :nth-child(8) {
           text-align: center;
@@ -138,7 +105,7 @@
           width: 16em;
         }
         tr :nth-child(3) {
-          width: 9em;
+          width: 12em;
         }
         tr :nth-child(4) {
           width: 2em;
@@ -149,7 +116,7 @@
           text-align: center;
         }
         tr :nth-child(6) {
-          width: 7.8em;
+          width: 7em;
           text-align: center;
         }
         tr :nth-child(7) {
@@ -249,13 +216,13 @@
   padding: 0.1em 0;
   p {
     font-size: 0.72em;
-    background-color: #fcff68;
+    background-color: $orange-color;
     // color: #ffffff;
-    color: #a7a7a7;
+    color: #ffff;
     font-weight: 600;
     width: 80%;
     border-radius: 1em;
-    padding: 0.3em 0.4em;
+    padding: 0.3em 0em;
     margin: 0;
     margin-bottom: 0.36em;
   }
@@ -270,12 +237,12 @@
 
   p {
     font-size: 0.72em;
-    background-color: $orange-color;
+    background-color: $blue-theme;
     color: #ffffff;
     font-weight: 600;
     width: 80%;
     border-radius: 1em;
-    padding: 0.3em 0.4em;
+    padding: 0.3em 0em;
     margin: 0;
     margin-bottom: 0.36em;
   }
@@ -295,8 +262,19 @@
     font-weight: 600;
     width: 80%;
     border-radius: 1em;
-    padding: 0.3em 0.4em;
+    padding: 0.3em 0em;
     margin: 0;
     margin-bottom: 0.36em;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .Container {
+    padding: 0.4em;
+    .productsList {
+      background-color: $white-grey;
+      box-shadow: none;
+      overflow-y: scroll;
+    }
   }
 }

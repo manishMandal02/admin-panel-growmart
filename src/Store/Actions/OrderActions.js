@@ -6,6 +6,9 @@ import {
   UPDATE_PRODUCT_REQUEST,
   UPDATE_ORDER_SUCCESS,
   UPDATE_ORDER_FAIL,
+  GET_ORDER_REQUEST,
+  GET_ORDER_SUCCESS,
+  GET_ORDER_ERROR,
 } from './ActionTypes';
 
 //get all orders
@@ -38,6 +41,41 @@ export const getOrders = (pageNumber) => async (dispatch, getState) => {
   } catch (error) {
     dispatch({
       type: GET_ORDERSLIST_ERROR,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};
+
+//get all orders
+export const getOrderById = (id) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: GET_ORDER_REQUEST,
+    });
+
+    const {
+      user: { admin },
+    } = getState();
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${admin.adminInfo.token}`,
+      },
+    };
+
+    const { data } = await axios.get(`/api/orders/${id}`, config);
+
+    dispatch({
+      type: GET_ORDER_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: GET_ORDER_ERROR,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
