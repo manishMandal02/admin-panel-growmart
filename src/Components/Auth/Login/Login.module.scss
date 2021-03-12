@@ -22,10 +22,11 @@
 
     background-color: #ffff;
     width: 16%;
-    height: 36%;
+    height: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     .Logo {
       font-size: 2em;
       border-radius: 0.2em;
@@ -76,7 +77,7 @@
         max-height: 2.3em;
         overflow: hidden;
         margin-top: 1em;
-        padding: 0.8em 0.8em 0.8em 0.8em;
+        padding: 1em 0.8em;
         border: none;
         display: flex;
         align-items: center;
@@ -84,7 +85,7 @@
         cursor: pointer;
         outline: none;
         color: #ffff;
-        font-size: 1.6em;
+        font-size: 1.3em;
         font-weight: 500;
         border-radius: 0.1em;
         transition: all 0.2s;
@@ -108,32 +109,35 @@
       }
 
       p {
-        margin: 0.8em 0;
-        font-size: 0.7em;
+        margin: 1em 0;
+        font-size: 0.72em;
         letter-spacing: 0.04em;
         text-align: center;
       }
     }
-    > button {
-      margin-top: 0.6em;
-      padding: 0.6em;
-      border: none;
+    .GoogleSignIn {
+      width: 100%;
       cursor: pointer;
+      padding: 0.5em;
+      border: none;
       outline: none;
       color: #ffff;
-      font-size: 1.2em;
-      border-radius: 0.2em;
+      font-size: 1.26em;
+      border-radius: 0.3em;
       transition: all 0.2s;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
       display: flex;
-      margin: 0.2em 0;
+      margin: 0;
+      margin-top: 1em;
       justify-content: center;
       align-items: center;
-      border: 1px solid $blue-theme;
-      color: $blue-theme;
-      background-color: #ffff;
-      font-size: 1.1em;
+      border: 1px solid #ffff;
+      background: rgb(42, 227, 134);
+      background: linear-gradient(
+        146deg,
+        rgba(42, 227, 134, 0.9110994739692753) 21%,
+        rgba(0, 180, 239, 0.7654412106639531) 100%
+      );
       &:hover {
         transform: scale(1.03);
 
@@ -144,6 +148,7 @@
         margin-bottom: 0.1em;
       }
     }
+
     > p:nth-child(5) {
       font-size: 0.8em;
       margin-top: 2em;
@@ -180,12 +185,16 @@
 @media only screen and (max-width: 900px) {
   .Container {
     .LoginForm {
-      width: 80%;
-      right: 2%;
-      height: 45%;
+      width: 72%;
+      right: 0%;
+      height: 47%;
       justify-content: center;
       > form {
-        height: 50%;
+        // height: 50%;
+      }
+      .GoogleSignIn {
+        margin-top: 0.8em;
+        width: 100%;
       }
     }
   }

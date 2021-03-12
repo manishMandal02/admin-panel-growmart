@@ -27,6 +27,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [visible, setVisible] = useState(false);
+  const [demoAdmin, setDemoAdmin] = useState(false);
 
   const history = useHistory();
 
@@ -50,6 +51,13 @@ const Login = () => {
     console.log(email, password);
     e.preventDefault();
     dispatch(adminLogin({ email, password }));
+  };
+
+  //login handler for demo
+  const loginSubmitHandlerDemo = (e) => {
+    e.preventDefault();
+    setDemoAdmin(true);
+    dispatch(adminLogin({ email: 'demo@example.com', password: 'demo123' }));
   };
 
   const visiblityHandler = () => {
@@ -124,14 +132,33 @@ const Login = () => {
             <Link to='#'>Forgot Your Password?</Link>
           </div> */}
 
-          <button type='submit' onClick={loginSubmitHandler}>
-            {loading ? (
-              <CircularProgress color='white' size={30} thickness={4} />
+          <button type='submit' onClick={(e) => loginSubmitHandler(e)}>
+            {loading && !demoAdmin ? (
+              <CircularProgress
+                color='white'
+                size={26}
+                style={{ padding: '0', margin: '0' }}
+              />
             ) : (
-              'Login'
+              `Login`
             )}
           </button>
+          <p>-------OR-------</p>
         </form>
+        <button
+          className={classes.GoogleSignIn}
+          onClick={(e) => loginSubmitHandlerDemo(e)}
+        >
+          {loading && demoAdmin ? (
+            <CircularProgress
+              color='white'
+              size={30}
+              style={{ padding: '0', margin: '0' }}
+            />
+          ) : (
+            `Demo Login`
+          )}
+        </button>
       </div>
       <div className={classes.Footer}>
         {' '}
