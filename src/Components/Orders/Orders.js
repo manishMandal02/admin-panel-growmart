@@ -28,9 +28,7 @@ const Order = ({ history, match }) => {
 
   const { adminInfo } = useSelector((state) => state.user.admin);
 
-  const { orders, loading, error, page, pages } = useSelector(
-    (state) => state.order.getOrders
-  );
+  const { orders, loading, error, page, pages } = useSelector((state) => state.order.getOrders);
 
   const handlePageChange = (event, value) => {
     history.push(`/orders/page/${value}`);
@@ -61,7 +59,7 @@ const Order = ({ history, match }) => {
               <th>Paid</th>
               <th>Delivered</th>
               <th>Status</th>
-              <th></th>
+              <th>Actions</th>
             </tr>
           </thead>
           {loading ? (
@@ -82,19 +80,13 @@ const Order = ({ history, match }) => {
                   <td></td>
                   <td className={classes.Id}> {order._id}</td>
                   <td className={classes.Name}>
-                    {order.user.name.length > 15
-                      ? `${order.user.name.substring(0, 13)}...`
-                      : order.user.name}
+                    {order.user.name.length > 15 ? `${order.user.name.substring(0, 13)}...` : order.user.name}
                   </td>
                   <td>{order.orderItems.length}</td>
                   <td>{order.totalPrice}</td>
                   <td>{order.createdAt.substring(0, 10)}</td>
                   <td>
-                    {order.isPaid ? (
-                      <CheckCircle color='primary' />
-                    ) : (
-                      <Cancel style={{ color: '#E0472C' }} />
-                    )}
+                    {order.isPaid ? <CheckCircle color='primary' /> : <Cancel style={{ color: '#E0472C' }} />}
                   </td>
                   <td>
                     {order.isDelivered ? (
@@ -162,20 +154,14 @@ const Order = ({ history, match }) => {
             </tbody>
           ) : null}
         </table>
-        <Modal
-          show={showOrderModal}
-          updateModalState={() => setShowOrderModal(false)}
-        >
+        <Modal show={showOrderModal} updateModalState={() => setShowOrderModal(false)}>
           <OrderDetailsModal
             show={showOrderModal}
             closeModal={() => setShowOrderModal(false)}
             order={clickedOrder}
           />
         </Modal>
-        <Modal
-          show={showUpdateModal}
-          updateModalState={() => setShowUpdateModal(false)}
-        >
+        <Modal show={showUpdateModal} updateModalState={() => setShowUpdateModal(false)}>
           <UpdateOrder
             show={showUpdateModal}
             closeModal={() => setShowUpdateModal(false)}

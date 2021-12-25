@@ -19,11 +19,7 @@ const Modal = (props) => {
           props.updateModalState();
         }}
       ></div>
-      <div
-        onClick={(e) => e.stopPropagation()}
-        className={classes.Modal}
-        id='modal'
-      >
+      <div onClick={(e) => e.stopPropagation()} className={classes.Modal} id='modal'>
         {props.children}
       </div>
     </>
