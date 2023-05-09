@@ -8,7 +8,7 @@ import './index.scss';
 import App from './App';
 import store from './Store/Store';
 
-axios.defaults.baseURL = 'https://growmart.herokuapp.com/';
+axios.defaults.baseURL = 'https://growmart.onrender.com/';
 // axios.defaults.baseURL = 'http://localhost:5000';
 
 const theme = createMuiTheme({
